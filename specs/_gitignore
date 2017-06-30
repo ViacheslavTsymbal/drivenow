@@ -1,0 +1,9 @@
+#directories
+
+node_modules/
+.idea/
+reports/
+.protractor-fail-fast
+
+#compilied js files
+*.js
