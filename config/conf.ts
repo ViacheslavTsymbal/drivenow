@@ -8,7 +8,7 @@ export const config = {
 
     // seleniumPort: 4444,
     // selenium: "http://127.0.0.1:4444/wd/hub",
-    baseUrl: "https://drvnw:drivenow13@www.beta.drive-now.com/",
+    baseUrl: "https://www.beta.drive-now.com/",
     params: {
         runOnJenkins: false,
     },
@@ -25,8 +25,8 @@ export const config = {
         "browserName": "chrome",
         // proxy: {
         //     proxyType: 'manual',
-        //     httpProxy: 'wp.sixt.de:8080',
-        //     sslProxy: 'wp.sixt.de:8080'
+        //     httpProxy: 'wp.sixt.it:8080',
+        //     sslProxy: 'wp.sixt.it:8080'
         // },
         "chromeOptions": {
             // Get rid of --ignore-certificate yellow warning
@@ -47,8 +47,8 @@ export const config = {
     },
 
     specs: [
-        // "../specs/spec.demo.js",
-        "../specs/reg1.js",
+        // "../Specs/spec.demo.js",
+        "../Specs/reg1.js",
         
     ],
 
@@ -60,12 +60,17 @@ export const config = {
         defaultTimeoutInterval: 3000000,
     },
 
+
+
+
     onPrepare: function () {
+
         browser.ignoreSynchronization = true;
+        browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/"),
         // browser.driver.manage().window().setSize(1440, 1080);
         browser.driver.manage().window().maximize();
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-            savePath: "./reports/",
+            savePath: "./Reports/",
             takeScreenshots: true,
             takeScreenshotsOnlyOnFailures: true,
         }));
