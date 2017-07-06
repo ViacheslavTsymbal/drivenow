@@ -229,9 +229,10 @@ var regPage = (function () {
         this.helper.sendKeys(it.licence_1, license);
     };
     regPage.prototype.enterITGTCapprove = function () {
-        this.helper.scrollIntoScreenCenter(it.agreeCheckbox);
-        this.helper.click(it.agreeCheckbox);
+        this.helper.scrollIntoScreenCenter(it.approvePrivacyPolicy);
+        this.helper.nonButtonClick(it.agreeCheckbox);
         this.helper.click(it.approvePrivacyPolicy);
+        this.helper.click(it.approveExplictConsent);
     };
     return regPage;
 }());

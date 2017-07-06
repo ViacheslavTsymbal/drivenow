@@ -202,7 +202,7 @@ describe("Registration",function () {
 
         //Page 3
         reg.clickNext();
-        reg.verifyErrorsCount(7);
+        reg.verifyErrorsCount(10);
         reg.getErrorText().then((text) => {
             let erText = text.filter(el => el !== "");
             expect(erText[0]).toEqual(tenant.it.licence);

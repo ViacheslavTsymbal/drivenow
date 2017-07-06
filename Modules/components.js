@@ -86,8 +86,8 @@ var errors = (function () {
             "dateOfBirth": "Seleziona una data di nascita valida",
             "fiscalCode": "Per favore inserisci un Codice Fiscale valido.",
             //page 3
-            "licence": "Please enter the number of your driving licence.",
-            "licenceDate": "Please select issuing date",
+            "licence": "Inserisci il numero della patente di guida.",
+            "licenceDate": "Seleziona la data di emissione",
             //page 4
             "cardProvider": "Seleziona il gestore della carta",
             "cardNumber": "Inserisci il numero di carta di credito",

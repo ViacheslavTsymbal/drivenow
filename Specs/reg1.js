@@ -174,7 +174,7 @@ describe("Registration", function () {
         reg.clickNext();
         //Page 3
         reg.clickNext();
-        reg.verifyErrorsCount(7);
+        reg.verifyErrorsCount(10);
         reg.getErrorText().then(function (text) {
             var erText = text.filter(function (el) { return el !== ""; });
             expect(erText[0]).toEqual(tenant.it.licence);

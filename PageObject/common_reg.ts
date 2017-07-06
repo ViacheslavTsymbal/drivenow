@@ -251,9 +251,10 @@ export class regPage  {
         this.helper.sendKeys(it.licence_1,license)
     }
     public enterITGTCapprove(){
-        this.helper.scrollIntoScreenCenter(it.agreeCheckbox);
-        this.helper.click(it.agreeCheckbox);
-        this.helper.click(it.approvePrivacyPolicy)
+        this.helper.scrollIntoScreenCenter(it.approvePrivacyPolicy);
+        this.helper.nonButtonClick(it.agreeCheckbox);
+        this.helper.click(it.approvePrivacyPolicy);
+        this.helper.click(it.approveExplictConsent);
 
     }
 

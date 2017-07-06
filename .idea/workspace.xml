@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfd0bf8f-cdac-482d-aef6-3d7b53b11ae7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Modules/components.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PageObject/registration_it.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Specs/redirects.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Specs/reg1.ts" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pageObjects/page.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/specs/reg1.ts" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helpers/helper.ts" afterPath="$PROJECT_DIR$/Modules/helper.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pageObjects/CA.ts" afterPath="$PROJECT_DIR$/PageObject/customerArea.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pageObjects/germany_pageobject.js" afterPath="$PROJECT_DIR$/PageObject/registration_de.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pageObjects/germany_pageobject.ts" afterPath="$PROJECT_DIR$/PageObject/registration_de.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pageObjects/landingPage.ts" afterPath="$PROJECT_DIR$/PageObject/landingPage.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pageObjects/registration.ts" afterPath="$PROJECT_DIR$/PageObject/common_reg.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/specs/customerArea.ts" afterPath="$PROJECT_DIR$/Specs/customerArea.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/specs/landing.ts" afterPath="$PROJECT_DIR$/Specs/landing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/conf.ts" afterPath="$PROJECT_DIR$/config/conf.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/capture-stack-trace/package.json" afterPath="$PROJECT_DIR$/node_modules/capture-stack-trace/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/is-path-cwd/package.json" afterPath="$PROJECT_DIR$/node_modules/is-path-cwd/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-stringify-safe/package.json" afterPath="$PROJECT_DIR$/node_modules/json-stringify-safe/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Reports/htmlReport.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Reports/screenshots/938c0c8fbf84328f692a6856d1b618b7.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/components.js" afterPath="$PROJECT_DIR$/Modules/components.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/components.ts" afterPath="$PROJECT_DIR$/Modules/components.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PageObject/common_reg.js" afterPath="$PROJECT_DIR$/PageObject/common_reg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PageObject/common_reg.ts" afterPath="$PROJECT_DIR$/PageObject/common_reg.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PageObject/registration_it.js" afterPath="$PROJECT_DIR$/PageObject/registration_it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PageObject/registration_it.ts" afterPath="$PROJECT_DIR$/PageObject/registration_it.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Specs/reg1.js" afterPath="$PROJECT_DIR$/Specs/reg1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Specs/reg1.ts" afterPath="$PROJECT_DIR$/Specs/reg1.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,23 +27,23 @@
       <file leaf-file-name="reg1.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Specs/reg1.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="232" column="29" lean-forward="false" selection-start-line="232" selection-start-column="12" selection-end-line="232" selection-end-column="29" />
+            <state relative-caret-position="486">
+              <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="21" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
                 <element signature="e#314#2858#0" expanded="false" />
-                <element signature="e#2905#5345#0" expanded="false" />
                 <element signature="e#3034#3387#0" expanded="false" />
+                <element signature="e#5390#8360#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common_reg.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common_reg.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PageObject/common_reg.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="252" column="11" lean-forward="false" selection-start-line="252" selection-start-column="11" selection-end-line="252" selection-end-column="11" />
+            <state relative-caret-position="257">
+              <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
                 <element signature="n#!!block;n#getErrorText#0;n#regPage#0" expanded="false" />
@@ -92,6 +83,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="components.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/components.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="89" column="62" lean-forward="false" selection-start-line="89" selection-start-column="62" selection-end-line="89" selection-end-column="62" />
+              <folding>
+                <element signature="e#111#873#0" expanded="false" />
+                <element signature="e#891#1685#0" expanded="false" />
+                <element signature="e#1703#2718#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="helper.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/helper.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration_it.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registration_it.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PageObject/registration_it.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -145,10 +150,10 @@
         <option value="$PROJECT_DIR$/PageObject/germany_pageobject.ts" />
         <option value="$PROJECT_DIR$/Specs/redirects.ts" />
         <option value="$PROJECT_DIR$/PageObject/registration_de.ts" />
-        <option value="$PROJECT_DIR$/Modules/components.ts" />
-        <option value="$PROJECT_DIR$/PageObject/registration_it.ts" />
-        <option value="$PROJECT_DIR$/PageObject/common_reg.ts" />
         <option value="$PROJECT_DIR$/Specs/reg1.ts" />
+        <option value="$PROJECT_DIR$/Modules/components.ts" />
+        <option value="$PROJECT_DIR$/PageObject/common_reg.ts" />
+        <option value="$PROJECT_DIR$/PageObject/registration_it.ts" />
       </list>
     </option>
   </component>
@@ -197,20 +202,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="drivenow" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drivenow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drivenow" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Specs" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,12 +334,12 @@
       <updated>1499329670937</updated>
       <workItem from="1499329675447" duration="191000" />
       <workItem from="1499329898695" duration="16000" />
-      <workItem from="1499330008987" duration="20450000" />
+      <workItem from="1499330008987" duration="22899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20657000" />
+    <option name="totallyTimeSpent" value="23106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1537" height="912" extended-state="6" />
@@ -499,18 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/components.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#873#0" expanded="false" />
-            <element signature="e#891#1685#0" expanded="false" />
-            <element signature="e#1703#2718#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PageObject/registration_de.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -519,41 +498,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/helper.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PageObject/registration_it.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc;n#Milan#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Specs/reg1.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="232" column="29" lean-forward="false" selection-start-line="232" selection-start-column="12" selection-end-line="232" selection-end-column="29" />
+        <state relative-caret-position="486">
+          <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="21" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
             <element signature="e#314#2858#0" expanded="false" />
-            <element signature="e#2905#5345#0" expanded="false" />
             <element signature="e#3034#3387#0" expanded="false" />
+            <element signature="e#5390#8360#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PageObject/common_reg.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="252" column="11" lean-forward="false" selection-start-line="252" selection-start-column="11" selection-end-line="252" selection-end-column="11" />
+        <state relative-caret-position="257">
+          <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
             <element signature="n#!!block;n#getErrorText#0;n#regPage#0" expanded="false" />
@@ -588,6 +549,36 @@
             <element signature="n#!!block;n#enterCardCvv#0;n#regPage#0" expanded="false" />
             <element signature="n#!!block;n#enterFiscalCodeCard#0;n#regPage#0" expanded="false" />
             <element signature="n#!!block;n#enterItDrivingLicence#0;n#regPage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/components.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="89" column="62" lean-forward="false" selection-start-line="89" selection-start-column="62" selection-end-line="89" selection-end-column="62" />
+          <folding>
+            <element signature="e#111#873#0" expanded="false" />
+            <element signature="e#891#1685#0" expanded="false" />
+            <element signature="e#1703#2718#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/helper.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PageObject/registration_it.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc;n#Milan#0" expanded="false" />
           </folding>
         </state>
       </provider>
