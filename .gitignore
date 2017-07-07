@@ -1,0 +1,10 @@
+#directories
+
+node_modules/
+.idea/
+reports/
+
+
+#compilied js files
+*.js
+
