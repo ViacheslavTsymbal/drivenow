@@ -1,6 +1,7 @@
 import {Helper} from "../Modules/helper"
 import {Germany} from "./registration_de"
 import {Milan} from "./registration_it"
+import ILocation = webdriver.ILocation;
 
 
 const de = new Germany();
@@ -46,6 +47,7 @@ export class regPage  {
     private expLDay = element(by.name("dlicExpDate-day"));
     private expLMonth = element(by.name("dlicExpDate-month"));
     private expLYear = element(by.name("dlicExpDate-year"));
+    //page 4
     private cardNumber = element(by.id("cardNumber"));
     private cardValidTo = element(by.name("expiry"));
     private cvv = element(by.name("cvv"));
@@ -59,23 +61,11 @@ export class regPage  {
 
 
 
-
-
-
-
     public getErrorText(){
         return this.errorMessage.getText()
 
 
-    }
-    public verifyErrors(errors,object){
-        expect(errors[0]).toEqual(object.email);
-        expect(errors[1]).toEqual(object.password);
-        expect(errors[2]).toEqual(object.pin);
-        expect(errors[3]).toEqual(object.sQuestion);
-        expect(errors[4]).toEqual(object.sAnswer);
-
-    }
+    };
     public verifyErrorsCount(num){
         this.helper.click(this.nextButton)
         this.errorMessage.count()
@@ -84,7 +74,7 @@ export class regPage  {
                 return browser.sleep(1000)
             })
 
-    }
+    };
     public selectTenant(tenant){
 
         this.helper.selectDropDownNumber(this.countrySelect,tenant);
@@ -93,12 +83,13 @@ export class regPage  {
     public selectPreferredCity(city){
         this.helper.selectDropDownNumber(de.special_preferred_city,(city));
 
-    }
+    };
 	public enterUniqueEmail (){
         let uniqMail;
         uniqMail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
         this.helper.click(this.email_0)
             .then(()=>this.helper.sendKeys(this.email_1,uniqMail));
+        return uniqMail
 	};
     public enterPassword (password){
         this.helper.click(this.password_0)
@@ -114,18 +105,18 @@ export class regPage  {
     };
     public enterSecurityAnswer(answer){
         this.helper.sendKeys(this.securityAnswer,answer)
-    }
+    };
     public clickNext(){
        return this.helper.click(this.nextButton)
-    }
+    };
     public selectGender(){
         this.helper.nonButtonClick(this.selectGenderCheckbox)
-    }
+    };
     public enterName(firstName,lastName){
         this.helper.sendKeys(this.firstName,firstName)
         this.helper.sendKeys(this.lastName,lastName)
 
-    }
+    };
     public enterStreetDetails(street,streetNumber,additionalStreet) {
         this.helper.sendKeys(this.street,street);
 
@@ -140,16 +131,16 @@ export class regPage  {
 
 
 
-    }
+    };
     public enterPostalCode(postalCode){
         this.helper.sendKeys(this.postalCode,postalCode);
 
-    }
+    };
     public enterPhone(mobileCode,mobileNumber){
         browser.sleep(500);
         this.helper.sendKeys(this.mobileCode,mobileCode);
         this.helper.sendKeys(this.mobileNumber,mobileNumber)
-    }
+    };
     public enterCity(city){
         this.helper.click(this.city_0)
             .then(()=>{
@@ -169,22 +160,22 @@ export class regPage  {
     public enterDrivingLicence(licence){
         this.helper.click(this.licence_0)
         this.helper.sendKeys(this.licence_1,licence)
-    }
+    };
     public selectLicenceCountry(lcountry){
         this.helper.selectDropDownNumber(this.lCountry,lcountry)
-    }
+    };
     public licenceValidFrom(day,month,year){
         this.helper.selectDropDownNumber(this.lDay,day);
         this.helper.selectDropDownNumber(this.lMonth,month);
         this.helper.selectDropDownNumber(this.lYear,year);
 
-    }
+    };
     public licenceValidTO(day,month,year){
         this.helper.selectDropDownNumber(this.expLDay,day);
         this.helper.selectDropDownNumber(this.expLMonth,month);
         this.helper.selectDropDownNumber(this.expLYear,year);
 
-    }
+    };
     public addCreditCardIframe(number, expDate, cvv){
 
         browser.sleep(3000);
@@ -197,25 +188,23 @@ export class regPage  {
         browser.switchTo().defaultContent()
 
 
-    }
-    public finishReg(){
+    };
+    public selectCheckBoxes(){
         this.helper.scrollIntoScreenCenter(this.agreeCheckbox);
         this.helper.click(this.agreeCheckbox)
-        this.helper.click(this.nextButton)
 
 
 
-    }
+    };
     public displayText(){
+        this.helper.click(this.nextButton);
         this.helper.isDisplayed(this.sms1);
-        this.message.getText()
-            .then((text)=>{
-            console.log(text);
-            // expect(text).toEqual("We've sent an email to " +this.uniqMail+" and a text message to 00380939177068.")
-            })
+        this.message.getText().then(function (text) {
+            console.log("confirmation: " + text)
 
+        })
 
-    }
+    };
     public selectDliCountry(day,month,year){
         this.helper.scrollIntoScreenCenter(de.de_dLiCountryDay)
         this.helper.selectDropDownNumber(de.de_dLiCountryDay,day);
@@ -223,40 +212,52 @@ export class regPage  {
         this.helper.selectDropDownNumber(de.de_dLiCountryYear,year);
 
 
-    }
+    };
     public chooseCreditCard(card){
         this.helper.selectDropDownNumber(de.de_creditCardDropdown,card)
-    }
+    };
     public enterCardNumber(number){
         this.helper.sendKeys(de.de_creditCardField,number)
 
-    }
+    };
     public enterCreditCardDates(year,month){
         this.helper.selectDropDownNumber(de.creditCardYear,year)
         this.helper.selectDropDownNumber(de.creditCardMonth,month)
 
-    }
+    };
     public enterCardCvv(cvv){
         this.helper.click(de.creditCardCvv_0)
             .then(() => {
             this.helper.sendKeys(de.creditCardCvv_1,cvv)
             })
-    }
+    };
     public enterFiscalCodeCard(code){
         this.helper.click(it.codiceFiscale_0)
         this.helper.sendKeys(it.codiceFiscale_1,code)
-    }
+    };
     public enterItDrivingLicence(license){
         this.helper.click(it.licence_0)
         this.helper.sendKeys(it.licence_1,license)
-    }
-    public enterITGTCapprove(){
-        this.helper.scrollIntoScreenCenter(it.approvePrivacyPolicy);
-        this.helper.nonButtonClick(it.agreeCheckbox);
-        this.helper.click(it.approvePrivacyPolicy);
-        this.helper.click(it.approveExplictConsent);
+    };
+    public selectCheckBoxesMilan(){
+        let agreeCheckbox = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approveTos']"));
+        let approvePrivacyPolicy = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approvePrivacyPolicy']"));
+        let approveExplictContent = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approveExplictConsent']"));
 
-    }
+        this.helper.scrollIntoScreenCenter(it.approveExplictConsent);
+
+        browser.actions().mouseMove(agreeCheckbox, {x:0, y:0}).click().perform();
+        browser.actions().mouseMove(approvePrivacyPolicy,{x:0,y:0}).click().perform();
+        browser.actions().mouseMove(approveExplictContent,{x:0,y:0}).click().perform();
+
+    };
+
+
+
+
+
+
 
 
 }
+

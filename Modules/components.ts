@@ -5,11 +5,13 @@
 
 export class errors{
     public  en = {
+        //page 1
     "email":"Please enter a valid e-mail address",
     "password":"Please enter a valid password",
     "pin":"Enter PIN consisting of 4 digits",
     "sQuestion":"Please select a security question",
     "sAnswer":"Please enter security answer",
+        //page 2
     "gender":"Please select gender",
     "fistName":"Please enter first name",
     "lastName":"Please enter last name",
@@ -24,11 +26,13 @@ export class errors{
     "preferredCity":"Please select preferred city"
 };
     public fi = {
+        //page 1
     "email":"Syötä kelvollinen sähköpostiosoite",
     "password":"Syötä kelvollinen salasana",
     "pin":"Anna 4-numeroinen pääsykoodisi",
     "sQuestion":"Valitse varmistuskysymys",
     "sAnswer":"Syötä vastaus varmistuskysymykseen",
+        //page 2
     "gender":"Valitse sukupuoli",
     "fistName":"Syötä etunimi",
     "lastName":"Syötä sukunimi",
@@ -38,16 +42,19 @@ export class errors{
     "city":"Syötä postitoimipaikka",
     "mobilePhone":"Syötä matkapuhelinnumero",
     "dateOfBirth":"Valitse kelvollinen syntymäaika",
+        //page 3
     "licence":"Syötä ajokorttisi numero.",
     "licenceDate":"Valitse myöntämispäivä",
     "confirmation":"Olemme lähettäneet sähköpostin osoitteeseen meetjoeb11ack+1498723830@gmail.com ja tekstiviestin numeroon 00380939177068."
 };
     public de = {
+        //page1
     "email":"Bitte gültige E-Mail-Adresse eingeben",
     "password":"Bitte gültiges Passwort eingeben",
     "pin":"Bitte PIN bestehend aus 4 Ziffern eingeben",
     "sQuestion":"Bitte Sicherheitsfrage auswählen",
     "sAnswer":"Bitte Antwort auf Sicherheitsfrage eingeben",
+        //page 2
     "gender":"Bitte Anrede wählen",
     "fistName":"Bitte Vorname eingeben",
     "lastName":"Bitte Nachname eingeben",
@@ -58,6 +65,7 @@ export class errors{
     "mobilePhone":"Bitte gültige Mobilfunknummer eingeben",
     "preferredCity":"Bitte bevorzugte Stadt auswählen",
     "dateOfBirth":"Bitte gültiges Geburtsdatum auswählen",
+        //page 3
     "licence":"Please enter the number of your driving licence.",
     "licenceDate":"Please select issuing date",
     "cardProvider":"Bitte Kartenanbieter auswählen",
@@ -93,7 +101,11 @@ export class errors{
         "cardProvider":"Seleziona il gestore della carta",
         "cardNumber":"Inserisci il numero di carta di credito",
         "cardDates":"Inserisci un numero valido",
-        "cvvCode":"Inserisci il codice di sicurezza"};
+        "cvvCode":"Inserisci il codice di sicurezza",
+        "confirmation_0":"Ti abbiamo inviato una e-mail a",
+        "confirmation_1":" e un SMS al numero 00380939177068.",
+
+    };
 
 
 

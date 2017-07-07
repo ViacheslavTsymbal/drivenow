@@ -15,7 +15,7 @@ beforeEach(function () {
 
 describe("Registration",function () {
 
-    xit("Berlin registration", function () {
+    it("Berlin registration", function () {
         //First Page
         reg.selectTenant(0);
         reg.verifyErrorsCount(6);
@@ -55,7 +55,7 @@ describe("Registration",function () {
         reg.enterStreetDetails("some street","22","optional street name");
         reg.enterPostalCode("01100");
         reg.enterPhone("00380","939177068");
-        reg.enterCity("Munich");
+        reg.enterCity("Berlin");
         reg.selectPreferredCity(5);
         reg.selectDateOfBirth(9);
         reg.selectMonthOfBirth(12);
@@ -76,14 +76,11 @@ describe("Registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2,3);
         reg.enterCardCvv(123);
-        reg.finishReg();
+        reg.selectCheckBoxes();
         reg.displayText();
 
-
-
     });
-
-    xit("Helsinki registration",function() {
+    it("Helsinki registration",function() {
 
         //First Page
         reg.selectTenant(3);
@@ -133,7 +130,7 @@ describe("Registration",function () {
         reg.licenceValidTO(5,5,5);
         reg.verifyErrorsCount(10);
         reg.getErrorText().then((value) => {
-            let erText = value.filter(el => el !== "")
+            let erText = value.filter(el => el !== "");
             expect(erText[0]).toEqual(tenant.fi.licence);
             expect(erText[1]).toEqual(tenant.fi.licenceDate);
         });
@@ -143,16 +140,14 @@ describe("Registration",function () {
 
         //Fourth Page
         reg.addCreditCardIframe(4153013999701048,"1229","048");
-        reg.finishReg();
+        reg.selectCheckBoxes();
         reg.displayText();
-        browser.sleep(5000)
 
 
 
 
 
     });
-
     it("Milan registration", function () {
         reg.selectTenant(7);
         reg.verifyErrorsCount(6);
@@ -193,7 +188,7 @@ describe("Registration",function () {
         reg.enterStreetDetails("some street","22","optional street name");
         reg.enterPostalCode("01100");
         reg.enterPhone("00380","939177068");
-        reg.enterCity("Munich");
+        reg.enterCity("Milan");
         reg.selectDateOfBirth(9);
         reg.selectMonthOfBirth(12);
         reg.selectYearOfBirth(28);
@@ -218,8 +213,6 @@ describe("Registration",function () {
         reg.clickNext();
         reg.getErrorText().then((text) => {
             let erText = text.filter(el => el !== "");
-            console.log(erText);
-
             expect(erText[0]).toEqual(tenant.it.cardProvider);
             expect(erText[1]).toEqual(tenant.it.cardNumber);
             expect(erText[2]).toEqual(tenant.it.cardDates);
@@ -230,9 +223,8 @@ describe("Registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2,3);
         reg.enterCardCvv(123);
-        reg.enterITGTCapprove();
+        reg.selectCheckBoxesMilan();
         reg.displayText();
-
 
     })
 
