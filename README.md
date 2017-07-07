@@ -1,10 +1,6 @@
 # drivenow
-Web UI automation 
+Automation project for www.beta.drive-now.com 
 
-TO INSTALL:
-RUN: npm install 
+Install: npm install 
 
-
-TO TEST:
-
-RUN: npm test
+Start: npm test
