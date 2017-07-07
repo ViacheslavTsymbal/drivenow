@@ -32,6 +32,13 @@ export class Helper {
 
     }
 
+    public open (url){
+        browser.get(url);
+       return browser.getCurrentUrl().then((url) => {
+            return url
+        })
+    }
+
 
     public click(element) {
         return browser.wait(

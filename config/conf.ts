@@ -47,9 +47,10 @@ export const config = {
     },
 
     specs: [
-        // "../Specs/spec.demo.js",
         "../Specs/reg1.js",
-        
+        "../Specs/redirects.js",
+
+
     ],
 
     directConnect: true,
