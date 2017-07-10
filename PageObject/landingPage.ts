@@ -34,12 +34,12 @@ export class landingPage {
         this.helper.click(this.email_0)
             .then(()=>{
                 this.helper.sendKeys(this.email_1,mail)
-                console.log("mail: " + mail)
+                console.log("\nmail: " + mail)
             });
         this.helper.click(this.password_0)
             .then(()=>{
                 this.helper.sendKeys(this.password_1,password)
-                console.log("password: " + password)
+                console.log("\npassword: " + password)
 
             });
         this.helper.click(this.loginBtn);

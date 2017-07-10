@@ -60,6 +60,7 @@ export class customerArea {
          browser.wait(function(){
             return newQuestion = element(by.id("securityQuestion")).getAttribute('value').then(function(value) {
                 let item = value.toString()
+                console.log(item)
                 return item 
             });
         });
