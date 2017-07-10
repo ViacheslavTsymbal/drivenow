@@ -16,7 +16,7 @@ beforeEach(function () {
 
 describe("Registration",function () {
 
-    it("Berlin registration", function () {
+    xit("Berlin registration", function () {
         //First Page
         reg.selectTenant(0);
         reg.verifyErrorsCount(6);
@@ -81,7 +81,7 @@ describe("Registration",function () {
         reg.displayText();
 
     });
-    xit("Helsinki registration",function() {
+    it("Helsinki registration",function() {
 
         //First Page
         reg.selectTenant(3);
@@ -116,8 +116,8 @@ describe("Registration",function () {
             expect(erText[8]).toEqual(tenant.fi.dateOfBirth);
         });
         reg.selectGender();
-        reg.enterName("Joe","Black");
-        reg.enterStreetDetails("some street","22","optional street name");
+        reg.enterName("Automation","BOT");
+        reg.enterStreetDetails("someStreet","22","optional street name");
         reg.enterPostalCode("01100");
         reg.enterPhone("00380","939177068");
         reg.enterCity("Helsinki");

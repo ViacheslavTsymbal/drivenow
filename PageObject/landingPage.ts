@@ -17,18 +17,6 @@ export class landingPage {
     private loginBtn = element(by.buttonText("Login"));
     private bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'))
 
-    public createUserData(){
-    let finlandData = {
-            email:"vt@mail.com",
-            password:"Qazwsx123",
-            PIN:"1234",
-            sQ:"movie",
-            sA:"joeblack"
-    }
-    let json = JSON.stringify(finlandData);
-    fs.writeFile("userData.json",finlandData)
-
-};
 
 
 
@@ -46,10 +34,13 @@ export class landingPage {
         this.helper.click(this.email_0)
             .then(()=>{
                 this.helper.sendKeys(this.email_1,mail)
+                console.log("mail: " + mail)
             });
         this.helper.click(this.password_0)
             .then(()=>{
                 this.helper.sendKeys(this.password_1,password)
+                console.log("password: " + password)
+
             });
         this.helper.click(this.loginBtn);
 

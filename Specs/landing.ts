@@ -6,7 +6,6 @@ var data = require('../Modules/user.json')
 const lp = new landingPage();
 const ca = new customerArea();
 
-
 describe("international home",function () {
 
     it('login to new customer area', function () {

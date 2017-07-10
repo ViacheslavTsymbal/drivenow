@@ -5,6 +5,10 @@ var fs = require('fs')
 export class customerArea {
     public helper = new Helper();
 
+
+
+
+
     private bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'));
     private caButton =  element(by.css('a[href*="/fi/en/customer/customer/data/private"]'))
 
@@ -28,6 +32,8 @@ export class customerArea {
 
     public updateAndStoreCustomerData() {
         let newMail;
+        let newQuestion
+
         let randomPassword = {
             "1":"Qazwsx123",
             "2": "Qazwsx1234",
@@ -38,35 +44,45 @@ export class customerArea {
             "2": "4321",
             "3":"9999"
         };
-        let securityQuestion = [1,2,3];
+        let randomQ = [1,2,3];
+
 
         let newPassword = this.helper.getRandom(randomPassword);
         let newPin = this.helper.getRandom(randomPin);
-        let newSecurityQuestion = this.helper.getRandom(securityQuestion);
-        let newSecurityAnswer;
+        let newSecurityQuestion = this.helper.getRandom(randomQ);
 
 
         newMail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
         this.helper.sendKeys(this.email, newMail);
         this.helper.sendKeys(this.password,newPassword);
         this.helper.sendKeys(this.pin,newPin);
-        this.helper.selectDropDownNumber(this.securityQuestion,newSecurityQuestion);
-        let x = element(by.id("securityQuestion")).getAttribute('value').toString()
+        this.helper.selectDropDownNumber(this.securityQuestion,newSecurityQuestion)
+         browser.wait(function(){
+            return newQuestion = element(by.id("securityQuestion")).getAttribute('value').then(function(value) {
+                let item = value.toString()
+                return item 
+            });
+        });
+           
+        this.helper.click(this.saveBtn);
+        browser.wait(function() {
+            browser.sleep(1000)
+            console.log("\nupdated profile for " +data.email )
+            return true
+        }).then(function() {
 
-
-        let finlandUser = {
+             let finlandUser = {
             "email": newMail,
             "password": newPassword,
             "pin":newPin,
-            "sQuestion":x,
-            "sAnswer":newSecurityAnswer
+            "sQuestion":newQuestion.toString(),
+            "sAnswer":"test"
 
         };
-        let updatedUser = JSON.stringify(finlandUser);
-        fs.writeFile("/home/olm/Projects/drivenow/Modules/user.json", updatedUser);
-        this.helper.scrollIntoScreenCenter(this.saveBtn);
-        this.helper.click(this.saveBtn);
-        browser.sleep(5000)
+            let updatedUser = JSON.stringify(finlandUser);
+            fs.writeFile("/home/olm/Projects/drivenow/Modules/user.json", updatedUser);
+
+        });
     }
 
 
