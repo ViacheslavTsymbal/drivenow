@@ -1,4 +1,5 @@
 import {Helper} from "../Modules/helper"
+let fs = require('fs');
 
 
 export class landingPage {
@@ -13,7 +14,27 @@ export class landingPage {
     private password_0 = element(by.css("label[class*='no-wrap-clip'][for='password']"));
     private password_1 = element(by.name("password"));
 
-    private loginBtn = element(by.buttonText("Login"))
+    private loginBtn = element(by.buttonText("Login"));
+    private bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'))
+
+    public createUserData(){
+    let finlandData = {
+            email:"vt@mail.com",
+            password:"Qazwsx123",
+            PIN:"1234",
+            sQ:"movie",
+            sA:"joeblack"
+    }
+    let json = JSON.stringify(finlandData);
+    fs.writeFile("userData.json",finlandData)
+
+};
+
+
+
+
+
+
 
 
 
@@ -31,6 +52,7 @@ export class landingPage {
                 this.helper.sendKeys(this.password_1,password)
             });
         this.helper.click(this.loginBtn);
-    }
+
+    };
 
 }

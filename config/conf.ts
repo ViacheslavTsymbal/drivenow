@@ -47,8 +47,9 @@ export const config = {
     },
 
     specs: [
-        "../Specs/reg1.js",
-        "../Specs/redirects.js",
+        // "../Specs/reg1.js",
+        // "../Specs/redirects.js",
+        "../Specs/landing.js"
 
 
     ],
@@ -68,9 +69,9 @@ export const config = {
 
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
-        browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
-            console.log("Proxy login:\nusername:drvnw\npassword:drivenow13");
-        });
+        // browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
+        //     console.log("Proxy login:\nusername:drvnw\npassword:drivenow13");
+        // });
         // browser.driver.manage().window().setSize(1440, 1080);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
             savePath: "./Reports/",

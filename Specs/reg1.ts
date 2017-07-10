@@ -7,6 +7,7 @@ const tenant = new errors();
 beforeEach(function () {
     browser.get("/de/berlin/registration/1")
 
+
 });
 
 
@@ -80,7 +81,7 @@ describe("Registration",function () {
         reg.displayText();
 
     });
-    it("Helsinki registration",function() {
+    xit("Helsinki registration",function() {
 
         //First Page
         reg.selectTenant(3);
@@ -148,7 +149,7 @@ describe("Registration",function () {
 
 
     });
-    it("Milan registration", function () {
+    xit("Milan registration", function () {
         reg.selectTenant(7);
         reg.verifyErrorsCount(6);
         reg.getErrorText().then((text) => {
