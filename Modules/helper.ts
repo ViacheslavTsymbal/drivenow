@@ -1,4 +1,6 @@
 const EC = protractor.ExpectedConditions;
+let fs = require('fs');
+let r = require('request');
 
 export class Helper {
 
@@ -43,7 +45,7 @@ export class Helper {
     public click(element) {
         return browser.wait(
             this.isClickable(element),
-            this.NORMAL_WAIT,
+            this.LONG_WAIT,
             "Following element did not show up " + element.locator().toString())
             .then(() => element.click());
     }
@@ -87,7 +89,7 @@ export class Helper {
      * @param element
      * @returns {webdriver.promise.Promise<T>}
      */
-    public isDisplayed(element: protractor.ElementFinder) {
+    public isDisplayed(element) {
         return browser.wait(
             EC.presenceOf(element),
             this.LONG_WAIT,
@@ -190,4 +192,13 @@ export class Helper {
 
         return notifier(imap).on('mail',function(mail){console.log(mail);}).start();
     }
+    public getRandom(obj){
+
+        var keys = Object.keys(obj)
+        return obj[keys[ keys.length * Math.random() << 0]];
+
+
+    }
+
+
 }
