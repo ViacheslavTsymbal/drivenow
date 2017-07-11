@@ -2,7 +2,7 @@ let Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
 let failFast = require("protractor-fail-fast");
 
 export const config = {
-
+    directConnect: true,
     seleniumServerJar: require("selenium-standalone-jar").path,
     chromeDriver: require("chromedriver").path,
     baseUrl: "https://www.beta.drive-now.com/",
@@ -34,14 +34,14 @@ export const config = {
         },
     },
     specs: [
-        "../Specs/spec_Registration.js",
-        "../Specs/spec_Redirects.js",
-        "../Specs/spec_Home.js"
+        // "../Specs/spec_Registration.js",
+        // "../Specs/spec_Redirects.js",
+        // "../Specs/spec_Home.js",
+        "../Specs/spec_CustomerArea.js"
 
 
     ],
 
-    directConnect: true,
 
 
 

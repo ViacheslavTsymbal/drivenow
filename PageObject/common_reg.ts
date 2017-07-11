@@ -1,20 +1,13 @@
-import {Helper} from "../Modules/helper"
 import {Germany} from "./registration_de"
 import {Milan} from "./registration_it"
-import ILocation = webdriver.ILocation;
-
-
+import {landingPage} from "./landingPage";
 const de = new Germany();
 const it = new Milan();
-export class regPage  {
 
-    public helper = new Helper();
+export class regPage extends landingPage {
+
 //Page 1
     private countrySelect = element(by.name("tenantSelector"));
-    private email_1 = element(by.name("email"));
-    private email_0 = element(by.css("label[class*='no-wrap-clip'][for='email']"));
-    private password_0 = element(by.css("label[class*='no-wrap-clip'][for='password']"));
-    private password_1 = element(by.name("password"));
     private pin_0 = element(by.css("label[class*='no-wrap-clip'][for='pin']"));
     private pin_1 = element(by.name("pin"));
     private securityQuestion = element(by.name("securityQuestion"));

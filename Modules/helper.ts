@@ -200,5 +200,9 @@ export class Helper {
 
     }
 
+    public isVisible(element){
+        return EC.visibilityOf(element)
+    }
+
 
 }

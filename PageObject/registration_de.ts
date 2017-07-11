@@ -1,4 +1,6 @@
-export class Germany {
+import {landingPage} from "./landingPage";
+
+export class Germany extends landingPage{
 
     public de_creditCardDropdown = element(by.name("payment-CC-payment-method-card-provider"));
     public de_creditCardField = element(by.name("payment-CC-payment-method-card-number"));

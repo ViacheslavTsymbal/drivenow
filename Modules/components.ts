@@ -88,11 +88,11 @@ export class errors{
         "postCode":"Codice postale",
         "city":"Inserisci la città",
         "mobilePhone":"Inserisci il numero di cellulare",
-        "dateOfBirth":"Seleziona una data di nascita valida",
+        "dateOfBirth":"Seleziona una userDataFile di nascita valida",
         "fiscalCode":"Per favore inserisci un Codice Fiscale valido.",
         //page 3
         "licence":"Inserisci il numero della patente di guida.",
-        "licenceDate":"Seleziona la data di emissione",
+        "licenceDate":"Seleziona la userDataFile di emissione",
         //page 4
         "cardProvider":"Seleziona il gestore della carta",
         "cardNumber":"Inserisci il numero di carta di credito",
