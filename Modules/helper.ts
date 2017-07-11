@@ -72,7 +72,7 @@ export class Helper {
      * @returns {Promise<void>}
      */
     public sendKeys(element: protractor.ElementFinder, value: string) {
-        return browser.wait(
+         browser.wait(
             this.isClickable(element),
             this.LONG_WAIT,
             "Following element did not show up " + element.locator().toString())
@@ -194,7 +194,7 @@ export class Helper {
     }
     public getRandom(obj){
 
-        var keys = Object.keys(obj)
+        let keys = Object.keys(obj);
         return obj[keys[ keys.length * Math.random() << 0]];
 
 

@@ -1,7 +1,3 @@
-/**
- * Created by olm on 7/6/17.
- * stores error_text, translations
- */
 
 export class errors{
     public  en = {
