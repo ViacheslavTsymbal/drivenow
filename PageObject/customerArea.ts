@@ -76,7 +76,7 @@ export class customerArea {
             let updatedUser = JSON.stringify(finlandUser);
             fs.writeFile("/home/olm/Projects/drivenow/Modules/user.json", updatedUser);
         });
-    }
+    };
 
 
 }

@@ -5,29 +5,17 @@ export const config = {
 
     seleniumServerJar: require("selenium-standalone-jar").path,
     chromeDriver: require("chromedriver").path,
-
-    // seleniumPort: 4444,
-    // selenium: "http://127.0.0.1:4444/wd/hub",
     baseUrl: "https://www.beta.drive-now.com/",
     params: {
         runOnJenkins: false,
     },
-
-    plugins: [
-        failFast.init(),
-    ],
-
-    afterLaunch: function () {
-        failFast.clean(); // Removes the fail file once all test runners have completed.
+    framework: "jasmine",
+    jasmineNodeOpts: {
+        showColors: true,
+        defaultTimeoutInterval: 3000000,
     },
-
     capabilities: {
         "browserName": "chrome",
-        // proxy: {
-        //     proxyType: 'manual',
-        //     httpProxy: 'wp.sixt.it:8080',
-        //     sslProxy: 'wp.sixt.it:8080'
-        // },
         "chromeOptions": {
             // Get rid of --ignore-certificate yellow warning
             args: ["--no-sandbox", "--test-type=browser", "disable-infobars"],
@@ -45,28 +33,21 @@ export const config = {
             },
         },
     },
-
     specs: [
-         // "../Specs/reg1.js",
-        // "../Specs/redirects.js",
-        "../Specs/landing.js"
+        "../Specs/spec_Registration.js",
+        "../Specs/spec_Redirects.js",
+        "../Specs/spec_Home.js"
 
 
     ],
 
     directConnect: true,
 
-    framework: "jasmine",
-    jasmineNodeOpts: {
-        showColors: true,
-        defaultTimeoutInterval: 3000000,
-    },
 
 
 
 
     onPrepare: function () {
-
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
         browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){

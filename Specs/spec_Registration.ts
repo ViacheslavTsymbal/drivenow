@@ -4,17 +4,15 @@ import {errors} from "../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
 
-beforeEach(function () {
-    browser.get("/de/berlin/registration/1")
-
-
-});
-
-
-
 
 
 describe("Registration",function () {
+    beforeEach(function () {
+        browser.get("/de/berlin/registration/1")
+
+
+    });
+
 
     xit("Berlin registration", function () {
         //First Page
