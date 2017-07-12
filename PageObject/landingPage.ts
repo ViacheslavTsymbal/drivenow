@@ -1,7 +1,6 @@
 import {Helper} from "../Modules/helper"
 const EC = protractor.ExpectedConditions;
 let fs = require('fs');
-const userDataFile = require('../Modules/user.json');
 
 
 export class landingPage {
@@ -24,7 +23,9 @@ export class landingPage {
         this.helper.sendKeys(this.email_1,mail);
         this.helper.sendKeys(this.password_1,password);
         this.helper.click(this.loginBtn);
-        this.helper.isDisplayed(this.bmButton)
+        this.helper.isDisplayed(this.bmButton).then(() => {
+            console.log("\nLogged in with: \n" +"email: "+ browser.params.user.email+"\npassword: "+ browser.params.user.password);
+        })
 
     };
 

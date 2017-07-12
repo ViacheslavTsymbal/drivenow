@@ -1,8 +1,9 @@
 import {landingPage} from "./landingPage";
 import {Promise, reject} from "q";
 import {error, log} from "util";
-const fs = require('fs');
-const userDataFile = require('../Modules/user.json');
+let fs = require('fs');
+let file = fs.readFileSync('/home/olm/Projects/drivenow/Modules/user.json');
+let userData = JSON.parse(file);
 let newMail;
 let securityQ;
 
@@ -18,7 +19,6 @@ export class customerArea extends landingPage {
     private securityQuestion = element(by.id('securityQuestion'));
     private Answer = element(by.id('securityAnswer'));
     private saveBtn = element(by.css("button[class*='btn btn-form-submit btn-black ']"));
-    private successSubmitButton = element(by.xpath("//*[@id='react-root']/div/main/div/section[5]/div/fieldset/div[3]/div/div/button/span/div/div/span"));
 
     //page Methods
 
@@ -35,6 +35,7 @@ export class customerArea extends landingPage {
 
         newMail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
         this.helper.sendKeys(this.emailField, newMail);
+        console.log("\n\nGenerated new random email: "+newMail)
 
 
     }
@@ -63,34 +64,29 @@ export class customerArea extends landingPage {
 
     }
 
-    public checkSubmittedForm() {
-        let email;
+
+
+    public checkSubmittedFormAndSaveDataOnSuccess() {
         element(by.id('email')).getAttribute('value').then(function (value) {
-            return email = value;
+            return value
+        }).then(value => {
+            expect(value).toEqual(newMail);
+           if(value==newMail){
+                browser.wait(function ()  {
+                    userData.email = newMail;
+                    fs.writeFileSync("/home/olm/Projects/drivenow/Modules/user.json", JSON.stringify(userData,null,1));
+                    return true;
+               },2000).then(function () {
+                   console.log("\nUpdated "+ browser.params.user.email + " to " + newMail);
+               });
+           }else {
+               console.log("Whoops, something went wrong, file is not updated")
+           }
         });
-        Promise<any>((resolve) => {
-            if (expect(email).toEqual(newMail) === true) {
-                var s = function () {
-                    let finlandUser = {
-                        "email": newMail,
-                        "password": "Qazwsx123",
-                        "pin": "7777",
-                        "sQuestion": securityQ.toString(),
-                        "sAnswer": "test"
-                    };
-                    let updatedUser = JSON.stringify(finlandUser);
-                    fs.writeFile("/home/olm/Projects/drivenow/Modules/user.json", updatedUser);
-                };
-                resolve(s);
-
-            }
+    };
 
 
-        });
-    }
-
-
-    }
+}
 
 
 

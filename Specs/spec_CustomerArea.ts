@@ -22,9 +22,9 @@ describe("Customer Area tests", function () {
         ca.updateEmailField();
         ca.updatePasswordField("Qazwsx123");
         ca.updateSecurityQuestion();
-        ca.updatePinField("7777")
+        ca.updatePinField("7777");
         ca.clickSaveAndWaitForRefresh();
-        ca.checkSubmittedForm();
+        ca.checkSubmittedFormAndSaveDataOnSuccess();
     });
 
 
