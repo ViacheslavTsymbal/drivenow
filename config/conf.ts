@@ -35,8 +35,8 @@ export const config = {
     },
     specs: [
         "../Specs/spec_Registration.js",
-        "../Specs/spec_Redirects.js",
-        "../Specs/spec_Home.js"
+        //"../Specs/spec_Redirects.js",
+        //"../Specs/spec_Home.js"
 
 
     ],
