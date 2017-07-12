@@ -1,8 +1,11 @@
+import {landingPage} from "./landingPage";
 import {Germany} from "./registration_de"
 import {Milan} from "./registration_it"
-import {landingPage} from "./landingPage";
+import {Lisabon} from "./registratin_pt"
 const de = new Germany();
 const it = new Milan();
+const pt = new Lisabon();
+
 
 export class regPage extends landingPage {
 
@@ -198,6 +201,7 @@ export class regPage extends landingPage {
         })
 
     };
+
     public selectDliCountry(day,month,year){
         this.helper.scrollIntoScreenCenter(de.de_dLiCountryDay)
         this.helper.selectDropDownNumber(de.de_dLiCountryDay,day);
@@ -206,6 +210,7 @@ export class regPage extends landingPage {
 
 
     };
+
     public chooseCreditCard(card){
         this.helper.selectDropDownNumber(de.de_creditCardDropdown,card)
     };
@@ -224,11 +229,12 @@ export class regPage extends landingPage {
             this.helper.sendKeys(de.creditCardCvv_1,cvv)
             })
     };
+
     public enterFiscalCodeCard(code){
         this.helper.click(it.codiceFiscale_0)
         this.helper.sendKeys(it.codiceFiscale_1,code)
     };
-    public enterItDrivingLicence(license){
+    public enterDrivingLicenceMilan(license){
         this.helper.click(it.licence_0)
         this.helper.sendKeys(it.licence_1,license)
     };
@@ -244,6 +250,11 @@ export class regPage extends landingPage {
         browser.actions().mouseMove(approveExplictContent,{x:0,y:0}).click().perform();
 
     };
+
+
+    public enterDrivingLicenceLisabon(licence){
+        this.helper.sendKeys(pt.licenceNumberField,licence)
+    }
 
 
 
