@@ -1,18 +1,27 @@
 let Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
 let failFast = require("protractor-fail-fast");
+let userDataFile = require('../Modules/user.json');
+
+
+
 
 export const config = {
-
+    directConnect: true,
     seleniumServerJar: require("selenium-standalone-jar").path,
     chromeDriver: require("chromedriver").path,
     baseUrl: "https://www.beta.drive-now.com/",
     params: {
-        runOnJenkins: false,
+        user: {
+            email: userDataFile.email,
+            password: userDataFile.password,
+            runOnJenkins: false,
+
+        },
     },
     framework: "jasmine",
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 3000000,
+        defaultTimeoutInterval: 500000,
     },
     capabilities: {
         "browserName": "chrome",
@@ -34,25 +43,19 @@ export const config = {
         },
     },
     specs: [
-        "../Specs/spec_Registration.js",
-        //"../Specs/spec_Redirects.js",
-        //"../Specs/spec_Home.js"
 
-
+        // "../Specs/spec_Registration.js",
+        // "../Specs/spec_Redirects.js",
+        // "../Specs/spec_Home.js",
+        "../Specs/spec_CustomerArea.js"
     ],
-
-    directConnect: true,
-
-
-
-
 
     onPrepare: function () {
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
-        browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
-            console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
-        });
+        // browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
+        //     console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
+        // });
         // browser.driver.manage().window().setSize(1440, 1080);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
             savePath: "./Reports/",
