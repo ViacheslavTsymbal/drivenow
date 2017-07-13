@@ -85,6 +85,24 @@ export class Helper {
     };
 
     /**
+     * Waits for element to be displayed and clear keys
+     *
+     * @param element
+     * @param value
+     * @returns {Promise<void>}
+     */
+    public clearKeys(element: protractor.ElementFinder) {
+        browser.wait(
+            this.isClickable(element),
+            this.LONG_WAIT,
+            "Following element did not show up " + element.locator().toString())
+            .then(() => {
+                element.click();
+                element.clear();
+            });
+    };
+
+    /**
      * Waits for element is present in DOM
      * @param element
      * @returns {webdriver.promise.Promise<T>}

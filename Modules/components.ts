@@ -102,6 +102,19 @@ export class errors{
         "confirmation_1":" e un SMS al numero 00380939177068.",
 
     };
+    public en_ca_errors = {
+        "email":"Please enter a valid email address",
+        "password":"Please enter a valid password",
+        "pin":"Please enter a valid pin",
+        "sQuestion":"",
+        "sAnswer":"Please enter something",
+        "street":"Please enter a valid street name",
+        "streetNumber":"Please enter street number",
+        "postalCode":"Please enter a valid postal code",
+        "city":"Please enter a city",
+
+};
+
 
 
 

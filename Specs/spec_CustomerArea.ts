@@ -18,12 +18,26 @@ describe("Customer Area tests", function () {
          expect<any>(ca.switchProfile()).toEqual(true);
     });
     it('updateUserProfile',function () {
-        ca.updateEmailField();
-        ca.updatePasswordField("Qazwsx123");
-        ca.updateSecurityQuestion();
-        ca.updatePinField("7777");
-        ca.clickSaveAndWaitForRefresh();
-        ca.checkSubmittedFormAndSaveDataOnSuccess();
+        // ca.updateEmailField();
+        // ca.updatePasswordField("Qazwsx123");
+        // ca.updateSecurityQuestion();
+        // ca.updatePinField("7777");
+        // ca.clickSaveAndWaitForRefresh();
+        // ca.checkSubmittedFormAndSaveDataOnSuccess();
+        // ca.verifyErrorsSecurityBlock();
+        // ca.clickResetButton();
+        // ca.resetButtonFunctionality();
+        // ca.clickResetButton();
+        //
+         ca.verifyErrorsContactDataBlock();
+         browser.sleep(10000)
+
+        ca.updateStreet("new street");
+        ca.updateStreetNumber("22");
+        ca.updatePostalCode("00100");
+        ca.updateCity("Helsinki");
+        ca.updateMobileCode("00380");
+        ca.updateMobilePhone("939177068");
     });
 
 

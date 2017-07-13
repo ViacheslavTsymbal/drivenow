@@ -58,7 +58,7 @@ export const config = {
         // });
         // browser.driver.manage().window().setSize(1440, 1080);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-            savePath: "../Reports/",
+            savePath: "./Reports/",
             takeScreenshots: true,
             takeScreenshotsOnlyOnFailures: true,
         }));
