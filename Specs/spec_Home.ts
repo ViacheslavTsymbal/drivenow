@@ -1,5 +1,5 @@
-import {landingPage} from "../PageObject/landingPage"
-import {customerArea} from "../PageObject/customerArea"
+import {landingPage} from "../PageObjects/landingPage"
+import {customerArea} from "../PageObjects/customerArea"
 
 const lp = new landingPage();
 const ca = new customerArea();

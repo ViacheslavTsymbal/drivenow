@@ -1,20 +1,19 @@
-import {landingPage} from "../PageObject/landingPage"
-import {customerArea} from "../PageObject/customerArea"
+import {landingPage} from "../PageObjects/landingPage"
+import {customerArea} from "../PageObjects/customerArea"
 
 const lp = new landingPage();
 const ca = new customerArea();
-const userDataFile = require('../Modules/user.json');
 
 
 describe("Customer Area tests", function () {
     beforeAll(function () {
-        lp.Login(userDataFile.email,userDataFile.password)
+        lp.Login(browser.params.user.email,browser.params.user.password)
     });
 
     xit('switch profiles',function () {
         ca.switchProfile();
         browser.getCurrentUrl().then((url) =>{
-        expect(url).toEqual('https://www.beta.drive-now.com/fi/en/customer/userDataFile/business')
+        expect(url).toEqual('https://www.beta.drive-now.com/fi/en/customer/data/business')
         });
          expect<any>(ca.switchProfile()).toEqual(true);
     });

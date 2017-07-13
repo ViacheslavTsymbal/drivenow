@@ -1,4 +1,4 @@
-import {regPage} from "../PageObject/common_reg"
+import {regPage} from "../PageObjects/common_reg"
 import {errors} from "../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
@@ -8,7 +8,7 @@ describe("Registration",function () {
         browser.get("/de/berlin/registration/1");
     });
 
-    xit("Berlin registration", function () {
+    it("Berlin registration", function () {
         //First Page
         reg.selectTenant(0);
         reg.verifyErrorsCount(6);
@@ -71,7 +71,7 @@ describe("Registration",function () {
         reg.displayText();
 
     });
-    xit("Helsinki registration",function() {
+    it("Helsinki registration",function() {
 
         //First Page
         reg.selectTenant(3);
@@ -139,7 +139,7 @@ describe("Registration",function () {
 
 
     });
-    xit("Milan registration", function () {
+    it("Milan registration", function () {
         reg.selectTenant(7);
         reg.verifyErrorsCount(6);
         reg.getErrorText().then((text) => {
@@ -218,7 +218,7 @@ describe("Registration",function () {
         reg.displayText();
 
     });
-    it("Lisbon registration", function () {
+    xit("Lisbon registration", function () {
        browser.get("https://www.beta.drive-now.com/en/lisbon/registration/1");
        reg.selectTenant(8);
        reg.clickNext();

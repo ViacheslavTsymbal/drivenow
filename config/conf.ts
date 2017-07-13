@@ -44,8 +44,8 @@ export const config = {
     },
     specs: [
 
-        // "../Specs/spec_Registration.js",
-        // "../Specs/spec_Redirects.js",
+         //"../Specs/spec_Registration.js",
+         //"../Specs/spec_Redirects.js",
         // "../Specs/spec_Home.js",
         "../Specs/spec_CustomerArea.js"
     ],
@@ -58,7 +58,7 @@ export const config = {
         // });
         // browser.driver.manage().window().setSize(1440, 1080);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-            savePath: "./Reports/",
+            savePath: "../Reports/",
             takeScreenshots: true,
             takeScreenshotsOnlyOnFailures: true,
         }));
