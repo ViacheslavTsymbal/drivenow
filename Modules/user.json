@@ -1,7 +1,8 @@
 {
- "email": "meetjoeb11ack+1499958587@gmail.com",
- "password": "Qazwsx123",
- "pin": "7777",
- "sQuestion": "0",
- "sAnswer": "test"
+  "email": "meetjoeb11ack+1500038081@gmail.com",
+  "password": "Qazwsx123",
+  "sQuestion": "Favorite dish",
+  "sAnswer": "my Answer",
+  "street": "Somerontie",
+  "code": "00550"
 }

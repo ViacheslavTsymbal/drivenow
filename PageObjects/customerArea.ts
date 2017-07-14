@@ -6,6 +6,10 @@ let file = fs.readFileSync('/home/olm/Projects/drivenow/Modules/user.json');
 let userData = JSON.parse(file);
 let newMail;
 let securityQ;
+let securityA;
+let street;
+let postalCode;
+let pin;
 const er = new errors();
 
 
@@ -14,7 +18,7 @@ export class customerArea extends landingPage {
     private caButton = element(by.css('a[href*="/fi/en/customer/customer/userDataFile/private"]'));
     private profileSwitchCheckbox = element(by.css("label[class*='visual'][for='switch']"));
     private optionalAddressField = element(by.id('streetAddition'));
-    private emailField = element(by.id('email'));
+    private emailField = element(by.id("email"));
     private passworField = element(by.id('password'));
     private pinField = element(by.id('pin'));
     private securityQuestionField = element(by.id('securityQuestion'));
@@ -24,25 +28,24 @@ export class customerArea extends landingPage {
     private resetButton = element(by.css("button[class*='btn btn-reset btn-blue btn-transparent ']"));
     private street = element(by.id("street"));
     private optionalStreet = element(by.name("streetAddition"));
-    private postalCode = element(by.name("postCode"));
-    private streetNumber = element(by.name("streetNumber"));
+    private postalCode = element(by.id("postCode"));
+    private streetNumber = element(by.id("streetNumber"));
     private city = element(by.name("city"));
     private mobileCode = element(by.name("mobileNumber-country-code"));
     private mobileNumber = element(by.name("mobileNumber-number"));
 
 
-
     //page Methods
-
+    public clickSave(){
+        this.helper.click(this.saveBtn)
+    }
     public isLoaded() {
         return this.helper.isDisplayed(this.bmButton)
     };
-
     public switchProfile() {
         this.helper.click(this.profileSwitchCheckbox);
         return this.helper.isDisplayed(this.optionalAddressField);
     };
-
     public updateEmailField() {
 
         newMail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
@@ -51,35 +54,44 @@ export class customerArea extends landingPage {
 
 
     }
-
     public updatePasswordField(password) {
         this.helper.sendKeys(this.passworField, password);
 
     }
-
     public updatePinField(pin) {
+        let randomPin = ["1111","2222","3333","7777"];
+        pin = this.helper.getRandom(randomPin)
         this.helper.sendKeys(this.pinField, pin);
+        this.pinField.getAttribute('value').then(value => {
+            pin = value;
+        });
 
     }
-
     public updateSecurityQuestion() {
         let random = [0, 1, 2];
         securityQ = this.helper.getRandom(random);
         this.helper.selectDropDownNumber(this.securityQuestionField, securityQ);
+        this.securityQuestionField.getAttribute('value').then(value => {
+            securityQ = value
+        })
 
 
     }
     public updateSecurityAnswer(answer){
-        this.helper.sendKeys(this.securityAnswerField,answer)
-    }
+        this.helper.sendKeys(this.securityAnswerField,answer);
+        this.securityAnswerField.getAttribute('value').then(value => {
+            securityA = value;
+        })
 
+    }
     public clickSaveAndWaitForRefresh() {
         this.helper.click(this.saveBtn);
         browser.sleep(15000)
 
     }
     public verifyErrorsSecurityBlock (){
-        this.emailField.clear();
+
+        this.helper.clearKeys(this.emailField)
         this.helper.click(this.passworField);
         this.helper.click(this.pinField);
         this.helper.click(this.securityAnswerField);
@@ -94,65 +106,71 @@ export class customerArea extends landingPage {
 
 
     };
-
-    public resetButtonFunctionality(){
+    public verifyResetButtonFunctionality(){
         this.helper.isNotDisplayed(this.resetButton);
         this.helper.click(this.passworField);
         expect<any>(this.resetButton.isDisplayed()).toEqual(true)
-
     };
-
-
-    public checkSubmittedFormAndSaveDataOnSuccess() {
+    public checkSecurityBlockAndSaveDataOnSuccess() {
        this.emailField.getAttribute('value').then(function (value) {
-            return value
-        }).then(value => {
-            expect(value).toEqual(newMail);
+           expect(value).toEqual(newMail);
            if(value==newMail){
-                browser.wait(function ()  {
-                    userData.email = newMail;
-                    fs.writeFileSync("/home/olm/Projects/drivenow/Modules/user.json", JSON.stringify(userData,null,1));
-                    return true;
-               },2000).then(function () {
-                   console.log("\nUpdated "+ browser.params.user.email + " to " + newMail);
-               });
+               browser.wait(function ()  {
+                   userData.email = newMail;
+                   userData.sQuestion = securityQ;
+                   userData.sAnswer = securityA;
+                   userData.pin = pin;
+                   fs.writeFileSync("/home/olm/Projects/drivenow/Modules/user.json", JSON.stringify(userData,null,1));
+                   return true;
+                   },2000).then(function () {
+                   console.log("\nUpdated "+ browser.params.user.email + " to " + newMail);});
            }else {
-               console.log("Whoops, something went wrong, file is not updated")
-           }
-        });
+               console.log("Whoops, something went wrong, file is not updated")}
+         });
     };
 
-    public updateStreet(street){
-        this.helper.sendKeys(this.street,street)
+    public updateStreet(){
+        let randomStreet = ['Alavus','Somerontie','Glogatan'];
+        street = this.helper.getRandom(randomStreet);
+        this.helper.inputSendKeys(this.street,street)
+
 
     };
     public updateStreetNumber(streetNumber){
-        this.helper.sendKeys(this.streetNumber,streetNumber)
+        this.helper.inputSendKeys(this.streetNumber,streetNumber)
 
     };
-    public updatePostalCode(code){
-        this.helper.sendKeys(this.postalCode,code)
+    public updatePostalCode(){
+        let randomCode= ['00100','00550','63300']
+        postalCode = this.helper.getRandom(randomCode)
+        this.postalCode.clear().then(() => {
+            this.postalCode.sendKeys(postalCode)
+        });
+
+
 
     };
     public updateCity(city){
-        this.helper.sendKeys(this.city,city)
+        this.helper.inputSendKeys(this.city,city)
 
     };
     public updateMobileCode(mCode){
-        this.helper.sendKeys(this.mobileCode, mCode)
-
+        this.helper.inputSendKeys(this.mobileCode,mCode)
     }
     public updateMobilePhone(mPhone){
-        this.helper.sendKeys(this.mobileNumber,mPhone)
+        this.helper.inputSendKeys(this.mobileNumber,mPhone)
 
     };
     public verifyErrorsContactDataBlock(){
-        this.helper.click(this.street);
-        browser.sleep(1000)
-        this.street.clear();
-        this.helper.click(this.street);
-        // this.helper.clearKeys(this.street);
-        this.helper.clearKeys(this.streetNumber);
+
+        this.helper.click(this.street).then(() => {
+            this.helper.sendKeys(this.street,"1")
+            browser.sleep(5000)
+        });
+        this.helper.click(this.city);
+        this.street.getAttribute('value').then((value => console.log(value)))
+
+        browser.sleep(5000)
         this.helper.clearKeys(this.city);
         this.helper.clearKeys(this.postalCode);
         this.helper.clearKeys(this.mobileCode);
@@ -175,6 +193,25 @@ export class customerArea extends landingPage {
     public clickResetButton(){
         this.helper.click(this.resetButton)
     }
+    public checkContactDataFormAndSaveDataOnSuccess(){
+    this.street.getAttribute('value').then(value => {
+        if(value==street) {
+            this.postalCode.getAttribute('value').then(value=>{
+                expect(value).toEqual(postalCode);
+            });
+            browser.wait(function ()  {
+                userData.street = street;
+                userData.code = postalCode;
+                fs.writeFileSync("/home/olm/Projects/drivenow/Modules/user.json", JSON.stringify(userData,null,2));
+                return true;
+            },2000).then(function () {
+                console.log("\nUpdated contact:streetName to " + street + " and contact:postalCode to " + postalCode );});
+        }else {
+        console.log("Whoops, something went wrong, file is not updated")};
+    });
+
+    }
+
 
 }
 

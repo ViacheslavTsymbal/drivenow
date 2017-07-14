@@ -14,14 +14,18 @@ export const config = {
         user: {
             email: userDataFile.email,
             password: userDataFile.password,
-            runOnJenkins: false,
+            street:userDataFile.street,
+            code:userDataFile.code,
 
         },
+
+        runOnJenkins: false,
+
     },
     framework: "jasmine",
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 500000,
+        defaultTimeoutInterval: 5000000,
     },
     capabilities: {
         "browserName": "chrome",
