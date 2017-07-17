@@ -18,7 +18,7 @@ describe("Customer Area tests", function () {
         ca.updateSecurityQuestion();
         ca.updatePinField("7777");
         ca.updateSecurityAnswer("my Answer");
-        ca.clickSaveAndWaitForRefresh();
+        ca.saveAndWaitWhileSecurityFormIsUpdated();
         ca.checkSecurityBlockAndSaveDataOnSuccess();
     });
 
@@ -34,7 +34,7 @@ describe("Customer Area tests", function () {
         ca.updateCity("Helsinki");
         ca.updateMobileCode("00380");
         ca.updateMobilePhone("939177068");
-        ca.clickSaveAndWaitForRefresh();
+        ca.saveAndWaitWhileContactFormIsUpdated();
         ca.checkContactDataFormAndSaveDataOnSuccess();
 
     });

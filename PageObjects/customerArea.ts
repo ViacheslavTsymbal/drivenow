@@ -1,4 +1,5 @@
 import {landingPage} from "./landingPage";
+const EC = protractor.ExpectedConditions;
 import {errors} from "../Modules/components"
 
 let fs = require('fs');
@@ -84,11 +85,27 @@ export class customerArea extends landingPage {
         })
 
     }
-    public clickSaveAndWaitForRefresh() {
+    public saveAndWaitWhileSecurityFormIsUpdated() {
         this.helper.click(this.saveBtn);
-        browser.sleep(15000)
+        browser.wait(()=> {
+            return this.pinField.getAttribute('value').then((value => {
+                return value == "••••"
+            }))
+        },15000)
 
-    }
+    };
+
+    public saveAndWaitWhileContactFormIsUpdated() {
+        this.helper.click(this.saveBtn);
+        browser.sleep(1000);
+        browser.wait(()=> {
+            return this.street.getAttribute('value').then((value => {
+                return value == street
+            }))
+        },15000)
+
+    };
+
     public verifyErrorsSecurityBlock (){
 
         this.helper.clearKeys(this.emailField)
@@ -211,6 +228,7 @@ export class customerArea extends landingPage {
     });
 
     }
+
 
 
 }
