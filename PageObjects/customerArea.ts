@@ -54,11 +54,11 @@ export class customerArea extends landingPage {
         console.log("\n\nGenerated new random email: "+newMail)
 
 
-    }
+    };
     public updatePasswordField(password) {
         this.helper.sendKeys(this.passworField, password);
 
-    }
+    };
     public updatePinField(pin) {
         let randomPin = ["1111","2222","3333","7777"];
         pin = this.helper.getRandom(randomPin)
@@ -67,7 +67,7 @@ export class customerArea extends landingPage {
             pin = value;
         });
 
-    }
+    };
     public updateSecurityQuestion() {
         let random = [0, 1, 2];
         securityQ = this.helper.getRandom(random);
@@ -77,14 +77,14 @@ export class customerArea extends landingPage {
         })
 
 
-    }
+    };
     public updateSecurityAnswer(answer){
         this.helper.sendKeys(this.securityAnswerField,answer);
         this.securityAnswerField.getAttribute('value').then(value => {
             securityA = value;
         })
 
-    }
+    };
     public saveAndWaitWhileSecurityFormIsUpdated() {
         this.helper.click(this.saveBtn);
         browser.wait(()=> {
@@ -94,7 +94,6 @@ export class customerArea extends landingPage {
         },15000)
 
     };
-
     public saveAndWaitWhileContactFormIsUpdated() {
         this.helper.click(this.saveBtn);
         browser.sleep(1000);
@@ -105,7 +104,6 @@ export class customerArea extends landingPage {
         },15000)
 
     };
-
     public verifyErrorsSecurityBlock (){
 
         this.helper.clearKeys(this.emailField)
@@ -145,7 +143,6 @@ export class customerArea extends landingPage {
                console.log("Whoops, something went wrong, file is not updated")}
          });
     };
-
     public updateStreet(){
         let randomStreet = ['Alavus','Somerontie','Glogatan'];
         street = this.helper.getRandom(randomStreet);
@@ -173,7 +170,7 @@ export class customerArea extends landingPage {
     };
     public updateMobileCode(mCode){
         this.helper.inputSendKeys(this.mobileCode,mCode)
-    }
+    };
     public updateMobilePhone(mPhone){
         this.helper.inputSendKeys(this.mobileNumber,mPhone)
 
@@ -206,10 +203,10 @@ export class customerArea extends landingPage {
 
 
 
-    }
+    };
     public clickResetButton(){
         this.helper.click(this.resetButton)
-    }
+    };
     public checkContactDataFormAndSaveDataOnSuccess(){
     this.street.getAttribute('value').then(value => {
         if(value==street) {
@@ -227,11 +224,7 @@ export class customerArea extends landingPage {
         console.log("Whoops, something went wrong, file is not updated")};
     });
 
-    }
-    public logOut(){
-
-    }
-
+    };
 
 }
 

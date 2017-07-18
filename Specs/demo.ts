@@ -14,9 +14,6 @@ const ca = new customerArea();
 
 describe("demo", function () {
 
-
-
-
     it("Helsinki registration",function() {
         browser.get("/de/berlin/registration/1");
 
@@ -93,7 +90,6 @@ describe("demo", function () {
 
 
     });
-
     it('PrivateBlock',function () {
         lp.Login(browser.params.user.email,browser.params.user.password);
         ca.verifyErrorsSecurityBlock();
@@ -107,12 +103,10 @@ describe("demo", function () {
         ca.saveAndWaitWhileSecurityFormIsUpdated();
         ca.checkSecurityBlockAndSaveDataOnSuccess();
     });
-
     it("resetButton",function () {
         ca.verifyResetButtonFunctionality();
         ca.clickResetButton();
     });
-
     it("ContactBlock",function () {
         ca.updateStreet();
         ca.updateStreetNumber("22");
@@ -125,17 +119,10 @@ describe("demo", function () {
         ca.checkContactDataFormAndSaveDataOnSuccess();
 
     });
-
     it("logOut",function () {
         lp.logOut()
 
     });
-
-
-
-
-
-
 
 
 });

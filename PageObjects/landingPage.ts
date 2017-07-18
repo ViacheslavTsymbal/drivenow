@@ -15,8 +15,7 @@ export class landingPage {
     public loginBtn = element(by.buttonText("Login"));
     public bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'));
     public logOutButton = element(by.css("button[class='btn btn-black']"));
-    public xxx = element(by.buttonText("Log out"));
-    public de_reg =  element(by.className('icon icon-germany'));
+    public deRegIcon =  element(by.className('icon icon-germany'));
 
 
 
@@ -33,11 +32,10 @@ export class landingPage {
         })
 
     };
-
     public logOut(){
         this.helper.click(this.userProfileIcon);
         this.helper.click(this.logOutButton);
-        expect<any>(this.de_reg.isDisplayed()).toEqual(true);
-    }
+        expect<any>(this.deRegIcon.isDisplayed()).toEqual(true);
+    };
 
 }
