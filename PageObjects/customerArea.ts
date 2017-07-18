@@ -214,7 +214,7 @@ export class customerArea extends landingPage {
     this.street.getAttribute('value').then(value => {
         if(value==street) {
             this.postalCode.getAttribute('value').then(value=>{
-                expect(value).toEqual(postalCode);
+                expect(value).toEqual("error should be here");
             });
             browser.wait(function ()  {
                 userData.street = street;
@@ -228,7 +228,9 @@ export class customerArea extends landingPage {
     });
 
     }
+    public logOut(){
 
+    }
 
 
 }

@@ -77,11 +77,12 @@ export class Helper {
             this.LONG_WAIT,
             "Following element did not show up " + element.locator().toString())
             .then(() => {
-                element.clear().then(function(){
-                    browser.sleep(500)
+                element.clear().then(() => {
                     element.sendKeys(value);
 
                 });
+
+
             });
     };
 

@@ -256,6 +256,24 @@ export class regPage extends landingPage {
         this.helper.sendKeys(pt.licenceNumberField,licence)
     }
 
+    public enterMobileCode(value) {
+        this.mobileCode.clear();
+        // return browser.wait(this.mobileCode.getAttribute('value').then((value)=>{
+        //     console.log(value)
+        // })).then(()=>{
+        //     this.mobileCode.sendKeys(value);
+        //
+        // });
+
+
+    }
+    public enterMobilePhone(value) {
+        this.mobileNumber.clear().then(() => {
+            this.mobileNumber.sendKeys(value)
+
+        });
+    }
+
 
 
 

@@ -7,13 +7,18 @@ export class landingPage {
 
     public helper = new Helper();
     public url = "/en";
-    public userProfileIcon = element(by.css("[class='icon icon-profile']"));
+    public userProfileIcon = element(by.id("login-opener"));
     public email_0 =  element(by.css("label[class*='no-wrap-clip'][for='email']"));
     public email_1 = element(by.name("email"));
     public password_0 = element(by.css("label[class*='no-wrap-clip'][for='password']"));
     public password_1 = element(by.name("password"));
     public loginBtn = element(by.buttonText("Login"));
     public bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'));
+    public logOutButton = element(by.css("button[class='btn btn-black']"));
+    public xxx = element(by.buttonText("Log out"));
+    public de_reg =  element(by.className('icon icon-germany'));
+
+
 
 
 
@@ -28,5 +33,11 @@ export class landingPage {
         })
 
     };
+
+    public logOut(){
+        this.helper.click(this.userProfileIcon);
+        this.helper.click(this.logOutButton);
+        expect<any>(this.de_reg.isDisplayed()).toEqual(true);
+    }
 
 }
