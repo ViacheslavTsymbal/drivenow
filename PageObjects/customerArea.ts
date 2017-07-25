@@ -2,6 +2,7 @@ import {landingPage} from "./landingPage";
 const EC = protractor.ExpectedConditions;
 import {errors} from "../Modules/components"
 
+let mkdirp = require('mkdirp');
 let fs = require('fs');
 let file = fs.readFileSync('/home/olm/Projects/drivenow/Modules/user.json');
 let userData = JSON.parse(file);
@@ -106,7 +107,7 @@ export class customerArea extends landingPage {
     };
     public verifyErrorsSecurityBlock (){
 
-        this.helper.clearKeys(this.emailField)
+        this.helper.sendKeys(this.emailField,"123")
         this.helper.click(this.passworField);
         this.helper.click(this.pinField);
         this.helper.click(this.securityAnswerField);
@@ -146,33 +147,35 @@ export class customerArea extends landingPage {
     public updateStreet(){
         let randomStreet = ['Alavus','Somerontie','Glogatan'];
         street = this.helper.getRandom(randomStreet);
-        this.helper.inputSendKeys(this.street,street)
+        this.helper.sendKeys(this.street,street)
 
 
     };
     public updateStreetNumber(streetNumber){
-        this.helper.inputSendKeys(this.streetNumber,streetNumber)
+        this.helper.sendKeys(this.streetNumber,streetNumber)
 
     };
+
+
     public updatePostalCode(){
-        let randomCode= ['00100','00550','63300']
-        postalCode = this.helper.getRandom(randomCode)
-        this.postalCode.clear().then(() => {
+        let randomCode= ['00100','00550','63300'];
+        postalCode = this.helper.getRandom(randomCode);
+        this.postalCode.clear().then(() =>{
             this.postalCode.sendKeys(postalCode)
-        });
-
-
+        })
 
     };
+
+
     public updateCity(city){
-        this.helper.inputSendKeys(this.city,city)
+        this.helper.sendKeys(this.city,city)
 
     };
     public updateMobileCode(mCode){
-        this.helper.inputSendKeys(this.mobileCode,mCode)
+        this.helper.sendKeys(this.mobileCode,mCode)
     };
     public updateMobilePhone(mPhone){
-        this.helper.inputSendKeys(this.mobileNumber,mPhone)
+        this.helper.sendKeys(this.mobileNumber,mPhone)
 
     };
     public verifyErrorsContactDataBlock(){
@@ -211,7 +214,7 @@ export class customerArea extends landingPage {
     this.street.getAttribute('value').then(value => {
         if(value==street) {
             this.postalCode.getAttribute('value').then(value=>{
-                expect(value).toEqual("error should be here");
+                expect(value).toEqual(postalCode);
             });
             browser.wait(function ()  {
                 userData.street = street;

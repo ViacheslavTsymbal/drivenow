@@ -51,8 +51,8 @@ export const config = {
          //"../Specs/spec_Registration.js",
          //"../Specs/spec_Redirects.js",
         // "../Specs/spec_Home.js",
-        // "../Specs/spec_CustomerArea.js",
-        "../Specs/demo.js"
+         "../Specs/spec_CustomerArea.js",
+        //.."../Specs/demo.js"
     ],
 
     onPrepare: function () {

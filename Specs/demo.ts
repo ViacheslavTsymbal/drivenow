@@ -14,7 +14,7 @@ const ca = new customerArea();
 
 describe("demo", function () {
 
-    it("Helsinki registration",function() {
+    xit("Helsinki registration",function() {
         browser.get("/de/berlin/registration/1");
 
         //First Page
@@ -90,7 +90,7 @@ describe("demo", function () {
 
 
     });
-    it('PrivateBlock',function () {
+    xit('PrivateBlock',function () {
         lp.Login(browser.params.user.email,browser.params.user.password);
         ca.verifyErrorsSecurityBlock();
         browser.sleep(3000);
@@ -103,14 +103,16 @@ describe("demo", function () {
         ca.saveAndWaitWhileSecurityFormIsUpdated();
         ca.checkSecurityBlockAndSaveDataOnSuccess();
     });
-    it("resetButton",function () {
+    xit("resetButton",function () {
         ca.verifyResetButtonFunctionality();
         ca.clickResetButton();
     });
+
     it("ContactBlock",function () {
+        lp.Login(browser.params.user.email,browser.params.user.password);
         ca.updateStreet();
         ca.updateStreetNumber("22");
-        //ca.updatePostalCode();
+        ca.updatePostalCode();
         ca.updateCity("Helsinki");
         ca.updateMobileCode("00380");
         ca.updateMobilePhone("939177068");

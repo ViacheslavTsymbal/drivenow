@@ -100,7 +100,7 @@ export class Helper {
             "Following element did not show up " + element.locator().toString())
             .then(() => {
                 element.click();
-                element.clear();
+
             });
     };
 
@@ -222,13 +222,9 @@ export class Helper {
 
     public isVisible(element){
         return EC.visibilityOf(element)
-    }
-    public inputSendKeys(elem,value){
-        elem.clear().then(function () {
-            elem.sendKeys(value)
+    };
 
-        });
-    }
+
 
 
 }

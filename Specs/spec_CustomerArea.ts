@@ -36,6 +36,7 @@ describe("Customer Area tests", function () {
         ca.updateMobilePhone("939177068");
         ca.saveAndWaitWhileContactFormIsUpdated();
         ca.checkContactDataFormAndSaveDataOnSuccess();
+        browser.sleep(4000)
 
     });
 
