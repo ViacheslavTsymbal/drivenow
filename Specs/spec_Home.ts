@@ -15,6 +15,10 @@ describe("international home",function () {
 
 
     });
+    it('logout from customer area',function () {
+        lp.logOut();
+
+    })
 
 
 
