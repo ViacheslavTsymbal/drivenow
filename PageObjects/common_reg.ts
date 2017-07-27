@@ -10,8 +10,8 @@ const pt = new Lisabon();
 export class regPage extends landingPage {
 
 //Page 1
-    private countrySelect = element(by.name("tenantSelector"));
-    private pin_0 = element(by.css("label[class*='no-wrap-clip'][for='pin']"));
+    private countrySelect = element(by.id("loginDetails.tenantSelector"));
+    private pin_0 = element(by.css("label[class*='no-wrap-clip'][for='loginDetails.pin']"));
     private pin_1 = element(by.name("pin"));
     private securityQuestion = element(by.name("securityQuestion"));
     private securityAnswer = element(by.name("securityAnswer"));
@@ -20,21 +20,21 @@ export class regPage extends landingPage {
     private firstName = element(by.name("firstName"));
     private lastName = element(by.name("lastName"));
 //Page 2
-    private streetNumber_0 = element(by.css("label[class*='no-wrap-clip'][for='streetNumber']"));
-    private streetNumber_1 = element(by.name("streetNumber"));
-    private mobileCode = element(by.name("mobileNumber-country-code"));
-    private mobileNumber = element(by.name("mobileNumber-number"));
-    private street = element(by.name("street"));
-    private optionalStreet_0 = element(by.css("label[class*='no-wrap-clip'][for='streetAddition']"));
-    private optionalStreet_1 = element(by.name("streetAddition"));
+    private streetNumber_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.streetNumber']"));
+    private streetNumber_1 = element(by.id("primaryDetails.streetNumber"));
+    private mobileCode = element(by.id("primaryDetails.primaryDetails.mobileNumber-country-code"));
+    private mobileNumber = element(by.id("primaryDetails.primaryDetails.mobileNumber-number"));
+    private street = element(by.id("primaryDetails.street"));
+    private optionalStreet_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.streetAddition']"));
+    private optionalStreet_1 = element(by.id("primaryDetails.streetAddition"));
     private postalCode = element(by.name("areaCode"));
-    private city_0 = element(by.css("label[class*='no-wrap-clip'][for='city']"));
-    private city_1 = element(by.name("city"));
-    private age = element(by.name("age-day"));
-    private month = element(by.name("age-month"));
-    private year = element(by.name("age-year"));
+    private city_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.city']"));
+    private city_1 = element(by.id("primaryDetails.city"));
+    private day = element(by.id("age-day"));
+    private month = element(by.id("age-month"));
+    private year = element(by.id("age-year"));
 //Page 3
-    private licence_0 = element(by.css("label[class*='no-wrap-clip'][for='dlicNumberWithExplanation']"));
+    private licence_0 = element(by.css("label[class*='no-wrap-clip'][for='driversLicense.dlicNumberWithExplanation']"));
     private licence_1 = element(by.name("dlicNumberWithExplanation"));
     private lCountry = element(by.name("dlicCountry"));
     private lDay = element(by.name("dlicCdate-day"));
@@ -66,7 +66,7 @@ export class regPage extends landingPage {
         this.helper.click(this.nextButton)
         this.errorMessage.count()
             .then(function (size) {
-                expect(size).toEqual(num)
+                expect(size).toEqual(num);
                 return browser.sleep(1000)
             })
 
@@ -145,7 +145,7 @@ export class regPage extends landingPage {
 
     };
     public selectDateOfBirth(date){
-         this.helper.selectDropDownNumber(this.age,date)
+         this.helper.selectDropDownNumber(this.day,date)
     };
     public selectMonthOfBirth(month){
          this.helper.selectDropDownNumber(this.month,month)

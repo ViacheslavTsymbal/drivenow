@@ -1,8 +1,8 @@
 import {landingPage} from "./landingPage";
 
 export class Milan extends landingPage {
-    public codiceFiscale_0 = element(by.css("label[class*='no-wrap-clip'][for='codiceFiscale']"));
-    public codiceFiscale_1 = element(by.name("codiceFiscale"));
+    public codiceFiscale_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.codiceFiscale']"));
+    public codiceFiscale_1 = element(by.id("primaryDetails.codiceFiscale"));
     public licence_0 = element(by.css("label[class*='no-wrap-clip'][for='dlicNumber']"));
     public licence_1 = element(by.name("dlicNumber"));
 

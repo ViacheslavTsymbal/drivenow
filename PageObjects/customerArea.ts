@@ -19,22 +19,22 @@ export class customerArea extends landingPage {
     public bmButton = element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'));
     private caButton = element(by.css('a[href*="/fi/en/customer/customer/userDataFile/private"]'));
     private profileSwitchCheckbox = element(by.css("label[class*='visual'][for='switch']"));
-    private optionalAddressField = element(by.id('streetAddition'));
-    private emailField = element(by.id("email"));
-    private passworField = element(by.id('password'));
-    private pinField = element(by.id('pin'));
-    private securityQuestionField = element(by.id('securityQuestion'));
-    private securityAnswerField = element(by.id('securityAnswer'));
+    private optionalAddressField = element(by.name('streetAddition'));
+    private emailField = element(by.name("email"));
+    private passworField = element(by.name('password'));
+    private pinField = element(by.name('pin'));
+    private securityQuestionField = element(by.name('securityQuestion'));
+    private securityAnswerField = element(by.name('securityAnswer'));
     private saveBtn = element(by.css("button[class*='btn btn-form-submit btn-black ']"));
     private errorMessage = element.all(by.css("[class*='content-message']"));
     private resetButton = element(by.css("button[class*='btn btn-reset btn-blue btn-transparent ']"));
-    private street = element(by.id("street"));
+    private street = element(by.name("street"));
     private optionalStreet = element(by.name("streetAddition"));
-    private postalCode = element(by.id("postCode"));
-    private streetNumber = element(by.id("streetNumber"));
+    private postalCode = element(by.name("postCode"));
+    private streetNumber = element(by.name("streetNumber"));
     private city = element(by.name("city"));
-    private mobileCode = element(by.name("mobileNumber-country-code"));
-    private mobileNumber = element(by.name("mobileNumber-number"));
+    private mobileCode = element(by.name("privateContact.mobileNumber-country-code"));
+    private mobileNumber = element(by.name("privateContact.mobileNumber-number"));
 
 
     //page Methods

@@ -8,9 +8,9 @@ export class landingPage {
     public helper = new Helper();
     public url = "/en";
     public userProfileIcon = element(by.id("login-opener"));
-    public email_0 =  element(by.css("label[class*='no-wrap-clip'][for='email']"));
+    public email_0 =  element(by.css("label[class*='no-wrap-clip'][for='loginDetails.email']"));
     public email_1 = element(by.name("email"));
-    public password_0 = element(by.css("label[class*='no-wrap-clip'][for='password']"));
+    public password_0 = element(by.css("label[class*='no-wrap-clip'][for='loginDetails.password']"));
     public password_1 = element(by.name("password"));
     public loginBtn = element(by.buttonText("Login"));
     public bmButton =  element(by.css('a[href*="/fi/en/customer/bonusminutes/private"]'));
