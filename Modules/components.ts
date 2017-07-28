@@ -61,6 +61,7 @@ export class errors{
     "mobilePhone":"Bitte gültige Mobilfunknummer eingeben",
     "preferredCity":"Bitte bevorzugte Stadt auswählen",
     "dateOfBirth":"Bitte gültiges Geburtsdatum auswählen",
+    "dlicDate":"Bitte Erteilungsdatum auswählen",
         //page 3
     "licence":"Please enter the number of your driving licence.",
     "licenceDate":"Please select issuing date",

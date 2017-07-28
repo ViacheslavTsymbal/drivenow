@@ -48,10 +48,12 @@ export const config = {
     },
     specs: [
 
-         //"../Specs/spec_Registration.js",
+         "../Specs/Registration/spec_BerlinReg.js",
+        //"../Specs/Registration/spec_HelsinkiReg.js",
+        //"../Specs/Registration/spec_Milan.js",
          //"../Specs/spec_Redirects.js",
          //"../Specs/spec_Home.js",
-         "../Specs/spec_CustomerArea.js",
+         //"../Specs/spec_CustomerArea.js",
         //.."../Specs/demo.js"
     ],
 
