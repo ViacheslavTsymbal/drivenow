@@ -5,20 +5,20 @@ const tenant = new errors();
 
 describe("Registration",function () {
     beforeEach(function () {
-        browser.get("/de/berlin/registration/1");
+       //browser.get("/de/berlin/registration/1");
     });
 
 
 
 it("Lisbon registration", function () {
     browser.get("https://www.beta.drive-now.com/en/lisbon/registration/1");
-    reg.selectTenant(8);
+    //reg.selectTenant(8);
     reg.clickNext();
     reg.verifyErrorsCount(5);
     reg.enterUniqueEmail();
     reg.enterPassword("Qazwsx123");
-    reg.selectSecurityQuestion(1);
-    reg.enterSecurityAnswer("meet Joe Black");
+    //reg.selectSecurityQuestion(1);
+    //reg.enterSecurityAnswer("meet Joe Black");
     reg.clickNext();
     //page 2
     reg.clickNext();

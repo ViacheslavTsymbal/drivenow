@@ -30,18 +30,17 @@ describe("Registration",function () {
         reg.verifyErrorsCount(21);
         reg.getErrorText().then((text) => {
             let erText = text.filter(el => el !== "");
-            console.log(erText)
-            //expect(erText[0]).toEqual(tenant.de.gender); ??? BUG
-            expect(erText[0]).toEqual(tenant.de.fistName);
-            expect(erText[1]).toEqual(tenant.de.lastName);
-            expect(erText[2]).toEqual(tenant.de.street);
-            expect(erText[3]).toEqual(tenant.de.streetNumber);
-            expect(erText[4]).toEqual(tenant.de.postCode);
-            expect(erText[5]).toEqual(tenant.de.city);
-            // expect(erText[6]).toEqual(tenant.de.mobilePhone); ??? BUG
-            expect(erText[6]).toEqual(tenant.de.preferredCity);
-            expect(erText[7]).toEqual(tenant.de.dateOfBirth);
-            expect(erText[8]).toEqual(tenant.de.dlicDate)
+            expect(erText[0]).toEqual(tenant.de.gender);
+            expect(erText[1]).toEqual(tenant.de.fistName);
+            expect(erText[2]).toEqual(tenant.de.lastName);
+            expect(erText[3]).toEqual(tenant.de.street);
+            expect(erText[4]).toEqual(tenant.de.streetNumber);
+            expect(erText[5]).toEqual(tenant.de.postCode);
+            expect(erText[6]).toEqual(tenant.de.city);
+            expect(erText[7]).toEqual(tenant.de.mobilePhone);
+            expect(erText[8]).toEqual(tenant.de.preferredCity);
+            expect(erText[9]).toEqual(tenant.de.dateOfBirth);
+            expect(erText[10]).toEqual(tenant.de.dlicDate)
 
         });
         reg.selectGender();

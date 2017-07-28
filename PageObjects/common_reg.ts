@@ -106,6 +106,7 @@ export class regPage extends landingPage {
        return this.helper.click(this.nextButton)
     };
     public selectGender(){
+        this.helper.scrollIntoScreenCenter(this.selectGenderCheckbox);
         this.helper.nonButtonClick(this.selectGenderCheckbox)
     };
     public enterName(firstName,lastName){
@@ -154,7 +155,7 @@ export class regPage extends landingPage {
          this.helper.selectDropDownNumber(this.year,year)
     };
     public enterDrivingLicence(licence){
-        this.helper.click(this.licence_0)
+        this.helper.click(this.licence_0);
         this.helper.sendKeys(this.licence_1,licence)
     };
     public selectLicenceCountry(lcountry){
@@ -239,9 +240,9 @@ export class regPage extends landingPage {
         this.helper.sendKeys(it.licence_1,license)
     };
     public selectCheckBoxesMilan(){
-        let agreeCheckbox = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approveTos']"));
-        let approvePrivacyPolicy = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approvePrivacyPolicy']"));
-        let approveExplictContent = browser.driver.findElement(by.css("label[class='label-wrapper'][for='approveExplictConsent']"));
+        let agreeCheckbox = browser.driver.findElement(by.css("label[class='label-wrapper'][for='registrationDetails.approveTos']"));
+        let approvePrivacyPolicy = browser.driver.findElement(by.css("label[class='label-wrapper'][for='registrationDetails.approvePrivacyPolicy']"));
+        let approveExplictContent = browser.driver.findElement(by.css("label[class='label-wrapper'][for='registrationDetails.approveExplictConsent']"));
 
         this.helper.scrollIntoScreenCenter(it.approveExplictConsent);
 
