@@ -1,7 +1,10 @@
 import {regPage} from "../../PageObjects/common_reg"
+import {Lisabon} from "../../PageObjects/registratin_pt"
+
 import {errors} from "../../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
+const pt = new Lisabon();
 
 describe("Registration",function () {
     beforeEach(function () {
@@ -48,11 +51,11 @@ it("Lisbon registration", function () {
     //page 3
     reg.clickNext();
     reg.verifyErrorsCount(11);
-    reg.enterPin(7777);
-    reg.enterDrivingLicenceLisabon(123456789);
-    reg.selectLicenceCountry(0);
-    reg.licenceValidFrom(5,2,2);
-    reg.licenceValidTO(5,5,5);
+    pt.enterDrivingLicenceLisabon(123456789);
+    pt.enterDrivingLicenceCountry(0);
+    pt.licenceValidFromLisbon(5,5,5);
+    pt.licenceValidToLisbon(5,5,5);
+    pt.enterPin(7777);
     reg.clickNext();
     //page 4
     reg.chooseCreditCard(2);
@@ -60,7 +63,7 @@ it("Lisbon registration", function () {
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
     reg.selectCheckBoxes();
-    reg.displayText();
+    reg.displayConfirmationText();
 
 
 

@@ -69,7 +69,7 @@ describe("Registration",function () {
         reg.enterCreditCardDates(2,3);
         reg.enterCardCvv(123);
         reg.selectCheckBoxes();
-        reg.displayText();
+        reg.displayConfirmationText();
 
     });
 

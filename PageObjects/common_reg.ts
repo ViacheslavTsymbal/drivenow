@@ -56,7 +56,7 @@ export class regPage extends landingPage {
 
 
 
-
+    //page 1
     public getErrorText(){
         return this.errorMessage.getText()
 
@@ -102,6 +102,8 @@ export class regPage extends landingPage {
     public enterSecurityAnswer(answer){
         this.helper.sendKeys(this.securityAnswer,answer)
     };
+
+    //page 2
     public clickNext(){
        return this.helper.click(this.nextButton)
     };
@@ -193,7 +195,7 @@ export class regPage extends landingPage {
 
 
     };
-    public displayText(){
+    public displayConfirmationText(){
         this.helper.click(this.nextButton);
         this.helper.isDisplayed(this.sms1);
         this.message.getText().then(function (text) {
@@ -253,18 +255,9 @@ export class regPage extends landingPage {
     };
 
 
-    public enterDrivingLicenceLisabon(licence){
-        this.helper.sendKeys(pt.licenceNumberField,licence)
-    }
 
     public enterMobileCode(value) {
         this.mobileCode.clear();
-        // return browser.wait(this.mobileCode.getAttribute('value').then((value)=>{
-        //     console.log(value)
-        // })).then(()=>{
-        //     this.mobileCode.sendKeys(value);
-        //
-        // });
 
 
     }

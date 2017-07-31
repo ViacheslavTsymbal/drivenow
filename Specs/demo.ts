@@ -83,7 +83,7 @@ describe("demo", function () {
         reg.addCreditCardIframe(4153013999701048,"1229","048");
         reg.selectCheckBoxes();
         browser.sleep(5000);
-        reg.displayText();
+        reg.displayConfirmationText();
 
 
 

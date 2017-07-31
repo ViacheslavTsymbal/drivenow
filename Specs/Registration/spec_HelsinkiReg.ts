@@ -70,7 +70,7 @@ describe("FI registration",function () {
         //Fourth Page
         reg.addCreditCardIframe(4153013999701048, "1229", "048");
         reg.selectCheckBoxes();
-        reg.displayText();
+        reg.displayConfirmationText();
 
 
     });

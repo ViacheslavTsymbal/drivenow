@@ -84,7 +84,7 @@ describe("FI registration",function () {
         reg.enterCreditCardDates(2, 3);
         reg.enterCardCvv(123);
         reg.selectCheckBoxesMilan();
-        reg.displayText();
+        reg.displayConfirmationText();
 
     });
 });
