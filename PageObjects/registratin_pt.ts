@@ -11,6 +11,9 @@ export class Lisabon extends landingPage{
     public expLYear = element(by.name("validTo-year"));
     public pin_0 = element(by.css("label[class*='no-wrap-clip'][for='drivingLicence.pin']"));
     public pin_1 = element(by.id("drivingLicence.pin"));
+    private day = element(by.id("dateOfBirth-day"));
+    private month = element(by.id("dateOfBirth-month"));
+    private year = element(by.id("dateOfBirth-year"));
 
 
     public licenceValidFromLisbon(day,month,year){
@@ -34,6 +37,16 @@ export class Lisabon extends landingPage{
     public enterPin (pin){
         this.helper.click(this.pin_0)
             .then(()=>this.helper.sendKeys(this.pin_1,pin))
+    };
+
+    public selectDateOfBirth(date){
+        this.helper.selectDropDownNumber(this.day,date)
+    };
+    public selectMonthOfBirth(month){
+        this.helper.selectDropDownNumber(this.month,month)
+    };
+    public selectYearOfBirth(year){
+        this.helper.selectDropDownNumber(this.year,year)
     };
 
 

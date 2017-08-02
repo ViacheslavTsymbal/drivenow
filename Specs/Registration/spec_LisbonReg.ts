@@ -17,26 +17,29 @@ it("Lisbon registration", function () {
     browser.get("https://www.beta.drive-now.com/en/lisbon/registration/1");
     //reg.selectTenant(8);
     reg.clickNext();
-    reg.verifyErrorsCount(5);
+    reg.verifyErrorsCount(3);
+    reg.getErrorText().then((value => {
+        let erText = value.filter(el => el !== "");
+        expect(erText[0]).toEqual(tenant.en.ptEmail);
+        expect(erText[1]).toEqual(tenant.en.password);
+    }));
     reg.enterUniqueEmail();
     reg.enterPassword("Qazwsx123");
-    //reg.selectSecurityQuestion(1);
-    //reg.enterSecurityAnswer("meet Joe Black");
     reg.clickNext();
     //page 2
     reg.clickNext();
-    reg.verifyErrorsCount(15);
+    reg.verifyErrorsCount(16);
     reg.getErrorText().then((value) => {
         let erText = value.filter(el => el !== "");
         expect(erText[0]).toEqual(tenant.en.gender);
         expect(erText[1]).toEqual(tenant.en.fistName);
         expect(erText[2]).toEqual(tenant.en.lastName);
         expect(erText[3]).toEqual(tenant.en.street);
-        expect(erText[4]).toEqual(tenant.en.streetNumber);
+        expect(erText[4]).toEqual(tenant.en.streetNumber); //BUG
         expect(erText[5]).toEqual(tenant.en.postCode);
         expect(erText[6]).toEqual(tenant.en.city);
         expect(erText[7]).toEqual(tenant.en.mobilePhone);
-        expect(erText[8]).toEqual(tenant.en.dateOfBirth);
+        expect(erText[8]).toEqual(tenant.en.dateOfBirth); //BUG
     });
     reg.selectGender();
     reg.enterName("Automation","BOT");
@@ -44,20 +47,36 @@ it("Lisbon registration", function () {
     reg.enterPostalCode("1250-333");
     reg.enterPhone("00380","939177068");
     reg.enterCity("Lisbon");
-    reg.selectDateOfBirth(9);
-    reg.selectMonthOfBirth(12);
-    reg.selectYearOfBirth(28);
+    pt.selectDateOfBirth(9);
+    pt.selectMonthOfBirth(12);
+    pt.selectYearOfBirth(28);
     reg.clickNext();
     //page 3
     reg.clickNext();
     reg.verifyErrorsCount(11);
+    reg.getErrorText().then((value) => {
+        let erText = value.filter(el => el !== "");
+        expect(erText[0]).toEqual(tenant.en.licence);
+        expect(erText[1]).toEqual(tenant.en.licenceDate);
+        expect(erText[2]).toEqual(tenant.en.pin);
+
+    });
     pt.enterDrivingLicenceLisabon(123456789);
     pt.enterDrivingLicenceCountry(0);
     pt.licenceValidFromLisbon(5,5,5);
-    pt.licenceValidToLisbon(5,5,5);
+    pt.licenceValidToLisbon(12,11,1);
     pt.enterPin(7777);
     reg.clickNext();
     //page 4
+    reg.clickNext();
+    reg.verifyErrorsCount(7);
+    reg.getErrorText().then((value) => {
+        let erText = value.filter(el => el !== "");
+        expect(erText[0]).toEqual(tenant.en.cardProvider);
+        expect(erText[1]).toEqual(tenant.en.cardNumber);
+        expect(erText[2]).toEqual(tenant.en.validUntil);
+        expect(erText[3]).toEqual(tenant.en.securityCode);
+    });
     reg.chooseCreditCard(2);
     reg.enterCardNumber(4153013999701048);
     reg.enterCreditCardDates(2,3);

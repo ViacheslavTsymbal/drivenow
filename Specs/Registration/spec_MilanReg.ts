@@ -1,7 +1,10 @@
 import {regPage} from "../../PageObjects/common_reg"
+import {Milan} from "../../PageObjects/registration_it"
+
 import {errors} from "../../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
+const IT = new Milan();
 
 describe("FI registration",function () {
     beforeEach(function () {
@@ -53,7 +56,7 @@ describe("FI registration",function () {
         reg.selectDateOfBirth(9);
         reg.selectMonthOfBirth(12);
         reg.selectYearOfBirth(28);
-        reg.enterFiscalCodeCard("JOE BCK 90T09 F205J");
+        IT.enterFiscalCodeCard("JOE BCK 90T09 F205J");
         reg.clickNext();
 
         //Page 3
@@ -66,7 +69,7 @@ describe("FI registration",function () {
 
 
         });
-        reg.enterDrivingLicenceMilan(12345689);
+        IT.enterDrivingLicenceMilan(12345689);
         reg.selectDliCountry(5, 5, 5);
         reg.clickNext();
         //Page 4
@@ -83,7 +86,7 @@ describe("FI registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2, 3);
         reg.enterCardCvv(123);
-        reg.selectCheckBoxesMilan();
+        IT.selectCheckBoxesMilan();
         reg.displayConfirmationText();
 
     });

@@ -19,7 +19,14 @@ export class errors{
     "dateOfBirth":"Please select valid date of birth",
     "licence":"Please enter the number of your driving licence.",
     "licenceDate":"Please select issuing date",
-    "preferredCity":"Please select preferred city"
+    "preferredCity":"Please select preferred city",
+    "ptEmail":"Your e-mail address serves as login into the Customer Area.",
+    "cardProvider":"Please select card provider",
+    "cardNumber":"Please enter credit card number",
+    "validUntil":"Please enter a valid value",
+    "securityCode":"Please enter security code",
+
+
 };
     public fi = {
         //page 1
