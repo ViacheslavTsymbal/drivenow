@@ -1,6 +1,6 @@
 let Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
 let failFast = require("protractor-fail-fast");
-let userDataFile = require('../Modules/user.json');
+let userDataFile = require('../Helpers/user.json');
 
 
 
@@ -47,14 +47,14 @@ export const config = {
         },
     },
     specs: [
-         "../Specs/Registration/spec_BerlinReg.js",
-         "../Specs/Registration/spec_HelsinkiReg.js",
-         "../Specs/Registration/spec_MilanReg.js",
-         "../Specs/Registration/spec_LisbonReg.js",
+         // "../Specs/Registration/spec_BerlinReg.js",
+         // "../Specs/Registration/spec_HelsinkiReg.js",
+         // "../Specs/Registration/spec_MilanReg.js",
+         // "../Specs/Registration/spec_LisbonReg.js",
 
         //"../Specs/spec_Redirects.js",
         //"../Specs/spec_Home.js",
-        //"../Specs/spec_CustomerArea.js",
+        "../Specs/spec_CustomerArea.js",
         //.."../Specs/demo.js"
     ],
 

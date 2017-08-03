@@ -1,4 +1,4 @@
-import {landingPage} from "./landingPage";
+import {landingPage} from "../landingPage";
 import {Germany} from "./registration_de"
 import {Milan} from "./registration_it"
 import {Lisabon} from "./registratin_pt"

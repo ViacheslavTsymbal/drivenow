@@ -1,4 +1,4 @@
-import {landingPage} from "./landingPage";
+import {landingPage} from "../landingPage";
 
 export class Milan extends landingPage {
     public codiceFiscale_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.codiceFiscale']"));

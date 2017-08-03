@@ -1,4 +1,5 @@
-import {Helper} from "../Modules/helper"
+import {Helper} from "../Helpers/helper";
+
 const EC = protractor.ExpectedConditions;
 let fs = require('fs');
 

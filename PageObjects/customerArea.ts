@@ -1,10 +1,10 @@
 import {landingPage} from "./landingPage";
-const EC = protractor.ExpectedConditions;
-import {errors} from "../Modules/components"
+import {errors} from "../Helpers/errors";
 
+const EC = protractor.ExpectedConditions;
 let mkdirp = require('mkdirp');
 let fs = require('fs');
-let file = fs.readFileSync('./Modules/user.json');
+let file = fs.readFileSync('./Helpers/user.json');
 let userData = JSON.parse(file);
 let newMail;
 let securityQ;
@@ -136,7 +136,7 @@ export class customerArea extends landingPage {
                    userData.sQuestion = securityQ;
                    userData.sAnswer = securityA;
                    userData.pin = pin;
-                   fs.writeFileSync("./Modules/user.json", JSON.stringify(userData,null,1));
+                   fs.writeFileSync("./Helpers/user.json", JSON.stringify(userData,null,1));
                    return true;
                    },2000).then(function () {
                    console.log("\nUpdated "+ browser.params.user.email + " to " + newMail);});
@@ -219,7 +219,7 @@ export class customerArea extends landingPage {
             browser.wait(function ()  {
                 userData.street = street;
                 userData.code = postalCode;
-                fs.writeFileSync("./Modules/user.json", JSON.stringify(userData,null,2));
+                fs.writeFileSync("./Helpers/user.json", JSON.stringify(userData,null,2));
                 return true;
             },2000).then(function () {
                 console.log("\nUpdated contact:streetName to " + street + " and contact:postalCode to " + postalCode );});

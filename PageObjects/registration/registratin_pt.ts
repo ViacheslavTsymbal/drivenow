@@ -1,4 +1,4 @@
-import {landingPage} from "./landingPage";
+import {landingPage} from "../landingPage";
 export class Lisabon extends landingPage{
 
     public licenceNumberField = element(by.id("drivingLicence.number"));

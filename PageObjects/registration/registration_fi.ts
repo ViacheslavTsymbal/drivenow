@@ -1,4 +1,4 @@
-import {landingPage} from "./landingPage";
+import {landingPage} from "../landingPage";
 
 export class Helsinki extends landingPage{
 

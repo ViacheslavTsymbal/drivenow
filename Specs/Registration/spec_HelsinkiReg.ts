@@ -1,6 +1,6 @@
-import {regPage} from "../../PageObjects/common_reg"
-import {errors} from "../../Modules/components"
-import {Helsinki} from "../../PageObjects/registration_fi"
+import {regPage} from "../../PageObjects/registration/common_reg"
+import {errors} from "../../Helpers/errors"
+import {Helsinki} from "../../PageObjects/registration/registration_fi"
 
 const reg = new regPage();
 const tenant = new errors();

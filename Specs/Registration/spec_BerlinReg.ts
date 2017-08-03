@@ -1,5 +1,5 @@
-import {regPage} from "../../PageObjects/common_reg"
-import {errors} from "../../Modules/components"
+import {regPage} from "../../PageObjects/registration/common_reg"
+import {errors} from "../../Helpers/errors"
 const reg = new regPage();
 const tenant = new errors();
 

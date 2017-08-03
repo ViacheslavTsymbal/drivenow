@@ -1,7 +1,7 @@
-import {regPage} from "../../PageObjects/common_reg"
-import {Milan} from "../../PageObjects/registration_it"
+import {regPage} from "../../PageObjects/registration/common_reg";
+import {Milan} from "../../PageObjects/registration/registration_it";
+import {errors} from "../../Helpers/errors";
 
-import {errors} from "../../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
 const IT = new Milan();

@@ -1,4 +1,4 @@
-import {Helper} from "../Modules/helper"
+import {Helper} from "../Helpers/helper"
 
 const helper = new Helper();
 

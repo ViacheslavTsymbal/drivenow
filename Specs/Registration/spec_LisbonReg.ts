@@ -1,7 +1,7 @@
-import {regPage} from "../../PageObjects/common_reg"
-import {Lisabon} from "../../PageObjects/registratin_pt"
+import {regPage} from "../../PageObjects/registration/common_reg"
+import {Lisabon} from "../../PageObjects/registration/registratin_pt"
+import {errors} from "../../Helpers/errors"
 
-import {errors} from "../../Modules/components"
 const reg = new regPage();
 const tenant = new errors();
 const pt = new Lisabon();
