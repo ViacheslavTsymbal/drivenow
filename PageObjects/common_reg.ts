@@ -9,7 +9,7 @@ const pt = new Lisabon();
 
 export class regPage extends landingPage {
 
-//Page 1
+//Page 1(person details)
     private countrySelect = element(by.id("loginDetails.tenantSelector"));
     private pin_0 = element(by.css("label[class*='no-wrap-clip'][for='loginDetails.pin']"));
     private pin_1 = element(by.name("pin"));
@@ -19,7 +19,7 @@ export class regPage extends landingPage {
     private selectGenderCheckbox = element(by.css("label[for='primaryDetails-gender-M']"));
     private firstName = element(by.name("firstName"));
     private lastName = element(by.name("lastName"));
-//Page 2
+//Page 2(contact details)
     private streetNumber_0 = element(by.css("label[class*='no-wrap-clip'][for='primaryDetails.streetNumber']"));
     private streetNumber_1 = element(by.id("primaryDetails.streetNumber"));
     private mobileCode = element(by.id("primaryDetails.primaryDetails.mobileNumber-country-code"));
@@ -33,7 +33,8 @@ export class regPage extends landingPage {
     private day = element(by.id("age-day"));
     private month = element(by.id("age-month"));
     private year = element(by.id("age-year"));
-//Page 3
+
+    //Page 3(driver's licence)
     private licence_0 = element(by.css("label[class*='no-wrap-clip'][for='driversLicense.dlicNumberWithExplanation']"));
     private licence_1 = element(by.name("dlicNumberWithExplanation"));
     private lCountry = element(by.name("dlicCountry"));
@@ -43,16 +44,22 @@ export class regPage extends landingPage {
     private expLDay = element(by.name("dlicExpDate-day"));
     private expLMonth = element(by.name("dlicExpDate-month"));
     private expLYear = element(by.name("dlicExpDate-year"));
-    //page 4
-    private cardNumber = element(by.id("cardNumber"));
-    private cardValidTo = element(by.name("expiry"));
-    private cvv = element(by.name("cvv"));
-    private okButton = element(by.css(".submit-button-text"));
+
+    //page 4(credit card)
+    public creditCardDropdown = element(by.name("payment-CC-payment-method-card-provider"));
+    public creditCardField = element(by.name("payment-CC-payment-method-card-number"));
+    public dLiCountryDay = element(by.name("dlicCdate-day"));
+    public dLiCountryMonth = element(by.name("dlicCdate-month"));
+    public dLiCountryYear = element(by.name("dlicCdate-year"));
+    public creditCardYear = element(by.name("payment-CC-payment-method-valid-until-year"));
+    public creditCardMonth = element(by.name("payment-CC-payment-method-valid-until-month"));
+    public creditCardCvv_0 = element(by.css("label[class*='no-wrap-clip'][for='paymentDetails.payment-CC-payment-method-security-code']"));
+    public creditCardCvv_1 = element(by.name("payment-CC-payment-method-security-code"));
+
     private agreeCheckbox = element(by.id("approveTos-container"));
     private errorMessage = element.all(by.css("[class*='content-message']"));
     private message = element.all(by.css("[class*='cms-injected']")).get(0);
     private sms1 = element(by.css("[class='registration-header']"));
-
 
 
 
@@ -175,19 +182,6 @@ export class regPage extends landingPage {
         this.helper.selectDropDownNumber(this.expLYear,year);
 
     };
-    public addCreditCardIframe(number, expDate, cvv){
-
-        browser.sleep(3000);
-        browser.switchTo().frame(0);
-
-        this.helper.sendKeys(this.cardNumber,number);
-        this.helper.sendKeys(this.cardValidTo,expDate);
-        this.helper.sendKeys(this.cvv,cvv);
-        this.helper.click(this.okButton);
-        browser.switchTo().defaultContent()
-
-
-    };
     public selectCheckBoxes(){
         this.helper.scrollIntoScreenCenter(this.agreeCheckbox);
         this.helper.click(this.agreeCheckbox)
@@ -206,30 +200,30 @@ export class regPage extends landingPage {
     };
 
     public selectDliCountry(day,month,year){
-        this.helper.scrollIntoScreenCenter(de.de_dLiCountryDay)
-        this.helper.selectDropDownNumber(de.de_dLiCountryDay,day);
-        this.helper.selectDropDownNumber(de.de_dLiCountryMonth,month);
-        this.helper.selectDropDownNumber(de.de_dLiCountryYear,year);
+        this.helper.scrollIntoScreenCenter(this.dLiCountryDay)
+        this.helper.selectDropDownNumber(this.dLiCountryDay,day);
+        this.helper.selectDropDownNumber(this.dLiCountryMonth,month);
+        this.helper.selectDropDownNumber(this.dLiCountryYear,year);
 
 
     };
 
     public chooseCreditCard(card){
-        this.helper.selectDropDownNumber(de.de_creditCardDropdown,card)
+        this.helper.selectDropDownNumber(this.creditCardDropdown,card)
     };
     public enterCardNumber(number){
-        this.helper.sendKeys(de.de_creditCardField,number)
+        this.helper.sendKeys(this.creditCardField,number)
 
     };
     public enterCreditCardDates(year,month){
-        this.helper.selectDropDownNumber(de.creditCardYear,year)
-        this.helper.selectDropDownNumber(de.creditCardMonth,month)
+        this.helper.selectDropDownNumber(this.creditCardYear,year);
+        this.helper.selectDropDownNumber(this.creditCardMonth,month);
 
     };
     public enterCardCvv(cvv){
-        this.helper.click(de.creditCardCvv_0)
+        this.helper.click(this.creditCardCvv_0)
             .then(() => {
-            this.helper.sendKeys(de.creditCardCvv_1,cvv)
+            this.helper.sendKeys(this.creditCardCvv_1,cvv)
             })
     };
 

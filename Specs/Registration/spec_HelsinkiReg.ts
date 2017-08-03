@@ -1,7 +1,10 @@
 import {regPage} from "../../PageObjects/common_reg"
 import {errors} from "../../Modules/components"
+import {Helsinki} from "../../PageObjects/registration_fi"
+
 const reg = new regPage();
 const tenant = new errors();
+const fi = new Helsinki();
 
 describe("FI registration",function () {
     beforeEach(function () {
@@ -68,7 +71,7 @@ describe("FI registration",function () {
         reg.clickNext();
 
         //Fourth Page
-        reg.addCreditCardIframe(4153013999701048, "1229", "048");
+        fi.addCreditCardIframe(4153013999701048, "1229", "048");
         reg.selectCheckBoxes();
         reg.displayConfirmationText();
 
