@@ -48,8 +48,10 @@ export class errors{
         //page 3
     "licence":"Syötä ajokorttisi numero.",
     "licenceDate":"Valitse myöntämispäivä",
-    "confirmation":"Olemme lähettäneet sähköpostin osoitteeseen meetjoeb11ack+1498723830@gmail.com ja tekstiviestin numeroon 00380939177068."
-};
+    "confirmation":"Olemme lähettäneet sähköpostin osoitteeseen meetjoeb11ack+1498723830@gmail.com ja tekstiviestin numeroon 00380939177068.",
+    "promoCodeMessage":"Kiitos! Rekisteröitymismaksun määrä on nyt 30 €."
+
+    };
     public de = {
         //page1
     "email":"Bitte gültige E-Mail-Adresse eingeben",
