@@ -84,7 +84,7 @@ export class regPage extends landingPage {
 
     };
     public selectTenant(tenant){
-
+        //this.helper.get() //TEST request.
         this.helper.selectDropDownNumber(this.countrySelect,tenant);
 		this.helper.isDisplayed(this.email_0)
 	};

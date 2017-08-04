@@ -1,6 +1,8 @@
 const EC = protractor.ExpectedConditions;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let fs = require('fs');
-let r = require('request');
+let xhr = new XMLHttpRequest();
+
 
 export class Helper {
 
@@ -224,16 +226,24 @@ export class Helper {
         return EC.visibilityOf(element)
     };
 
-    public addDataTestId() {
-        by.addLocator('dataTestId',
-            function (expected, parentElement: HTMLElement | null) {
-                let using = parentElement || document;
-                let nodes = using.querySelectorAll('[data-test-id]');
-                return Array.prototype.filter.call(nodes, function (node) {
-                    return (node.getAttribute('data-test-id') === expected);
-                });
-            });
-    };
+
+    public get(){
+        browser.wait(function () {
+            let path = 'https://beta.content-api.drivenow.com/web/crm/bonusminutes/private?country=fi&language=en'
+            xhr.open('GET',path,false)
+            xhr.setRequestHeader("X-Auth-Token", 'd3e03345ae2d17c5cd022e240efff6df');
+            xhr.setRequestHeader("X-Api-Key", 'rz7a9SgrPfHwTz3gFza81XnoXNQ7IuIU');
+            xhr.send()
+            if (xhr.status != 200) {
+                console.log(xhr.status + ': ' + xhr.statusText);
+            } else {
+                console.log("????")
+                console.log(JSON.parse(xhr.responseText));
+            }
+        },100000)
+
+
+    }
 
 
 
