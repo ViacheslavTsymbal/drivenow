@@ -75,7 +75,8 @@ export class errors{
     "cardProvider":"Bitte Kartenanbieter auswählen",
     "cardNumber":"Bitte gültige Kreditkartennummer eingeben",
     "cardDates":"Bitte gültigen Wert eingeben",
-    "cvvCode":"Bitte Sicherheitscode eingeben"
+    "cvvCode":"Bitte Sicherheitscode eingeben",
+    "promoCodeMessage":"Vielen Dank! Die Anmeldegebühr wurde auf 29 € geändert."
 
 
 };
@@ -108,6 +109,8 @@ export class errors{
         "cvvCode":"Inserisci il codice di sicurezza",
         "confirmation_0":"Ti abbiamo inviato una e-mail a",
         "confirmation_1":" e un SMS al numero 00380939177068.",
+        "promoCodeMessage":"Grazie! Il costo di iscrizione è variato ed è ora di 0 €, compresi 20 minuti gratis."
+
 
     };
     public en_ca_errors = {
@@ -127,6 +130,5 @@ export class errors{
 
 
 }
-
 
 

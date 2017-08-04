@@ -224,6 +224,16 @@ export class Helper {
         return EC.visibilityOf(element)
     };
 
+    public addDataTestId() {
+        by.addLocator('dataTestId',
+            function (expected, parentElement: HTMLElement | null) {
+                let using = parentElement || document;
+                let nodes = using.querySelectorAll('[data-test-id]');
+                return Array.prototype.filter.call(nodes, function (node) {
+                    return (node.getAttribute('data-test-id') === expected);
+                });
+            });
+    };
 
 
 

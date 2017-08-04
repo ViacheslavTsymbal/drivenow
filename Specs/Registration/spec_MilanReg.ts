@@ -86,6 +86,7 @@ describe("FI registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2, 3);
         reg.enterCardCvv(123);
+        reg.validatePromoCodeLogic("DEFAULT",tenant.it.promoCodeMessage)
         IT.selectCheckBoxesMilan();
         reg.displayConfirmationText();
 

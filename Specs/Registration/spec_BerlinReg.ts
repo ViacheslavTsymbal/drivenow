@@ -68,6 +68,7 @@ describe("Registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2,3);
         reg.enterCardCvv(123);
+        reg.validatePromoCodeLogic("DEFAULT",tenant.de.promoCodeMessage)
         reg.selectCheckBoxes();
         reg.displayConfirmationText();
 
