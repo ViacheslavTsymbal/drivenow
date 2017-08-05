@@ -1,12 +1,22 @@
 import {regPage} from "../../PageObjects/registration/common_reg"
 import {errors} from "../../Helpers/errors"
+import {Requests} from "../../Helpers/http"
+
 const reg = new regPage();
 const tenant = new errors();
+const https = new Requests()
+
+
+ var flow = browser.controlFlow();
+      
 
 describe("Registration",function () {
     beforeEach(function () {
-        browser.get("/de/berlin/registration/1");
-    });
+    browser.get("/de/berlin/registration/1");
+    var x = protractor.promise.all(flow.execute(https.userLogin),
+        flow.execute(https.getBonusMinutes))
+
+});
 
     it("Berlin registration", function () {
         //First Page
