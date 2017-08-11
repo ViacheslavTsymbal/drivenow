@@ -74,6 +74,7 @@ describe("FI registration",function () {
         fi.addCreditCardIframe(4153013999701048, "1229", "048");
         reg.validatePromoCodeLogic("DEFAULT",tenant.fi.promoCodeMessage)
         reg.selectCheckBoxes();
+
         reg.displayConfirmationText();
 
 

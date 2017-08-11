@@ -1,5 +1,5 @@
 let r =  require('request');
-let auth
+let auth;
 
 export class Requests{
 
@@ -29,11 +29,6 @@ export class Requests{
     });
     return defer.promise
 };
-
-
-
-
-
     public static get(url,headers){
         var defer = protractor.promise.defer();
         r.get({
@@ -58,8 +53,8 @@ export class Requests{
 
 
 
-
- public userLogin(){
+    //API calls
+    public userLogin(){
 
         return Requests.post(
         //url
@@ -76,10 +71,7 @@ export class Requests{
         "password":"Qazwsx123"
         });         
     };
-
-
- public getBonusMinutes(){
-     console.log("????????")
+    public getBonusMinutes(){
      return Requests.get(
          'https://beta.content-api.drive-now.com/web/crm/bonusminutes/private?country=fi&language=en',
         {   
@@ -89,7 +81,7 @@ export class Requests{
            'Content-type':'application/json',
            
         },
-         )
+     )
  }
 
 

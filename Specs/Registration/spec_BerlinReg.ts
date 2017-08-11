@@ -1,10 +1,10 @@
 import {regPage} from "../../PageObjects/registration/common_reg"
 import {errors} from "../../Helpers/errors"
-import {Requests} from "../../Helpers/http"
+import {Requests} from "../../Helpers/xhr"
 
 const reg = new regPage();
 const tenant = new errors();
-const https = new Requests()
+const api = new Requests()
 
 
  var flow = browser.controlFlow();
@@ -13,8 +13,7 @@ const https = new Requests()
 describe("Registration",function () {
     beforeEach(function () {
     browser.get("/de/berlin/registration/1");
-    var x = protractor.promise.all(flow.execute(https.userLogin),
-        flow.execute(https.getBonusMinutes))
+
 
 });
 

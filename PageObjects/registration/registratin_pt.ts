@@ -11,11 +11,13 @@ export class Lisabon extends landingPage{
     public expLYear = element(by.name("validTo-year"));
     public pin_0 = element(by.css("label[class*='no-wrap-clip'][for='drivingLicence.pin']"));
     public pin_1 = element(by.id("drivingLicence.pin"));
-    private day = element(by.id("dateOfBirth-day"));
-    private month = element(by.id("dateOfBirth-month"));
-    private year = element(by.id("dateOfBirth-year"));
-
-
+    public day = element(by.id("dateOfBirth-day"));
+    public month = element(by.id("dateOfBirth-month"));
+    public year = element(by.id("dateOfBirth-year"));
+    public vvButton = element(by.css("a[href*='https://sitetestes.viaverde.pt/drivenow']"))
+    public vvLoginEmail = element(by.id("txtUsername"));
+    public vvLoginPassword = element(by.id("txtPassword"));
+    public vvDNloginButton = element(by.id("btnDriveNowLogin"));
     public licenceValidFromLisbon(day,month,year){
         this.helper.selectDropDownNumber(this.lDay,day);
         this.helper.selectDropDownNumber(this.lMonth,month);
@@ -48,6 +50,19 @@ export class Lisabon extends landingPage{
     public selectYearOfBirth(year){
         this.helper.selectDropDownNumber(this.year,year)
     };
+
+    public vvButtonLogin(){
+        this.helper.click(this.vvButton)
+
+    }
+
+    public enterCredentialsForVV(mail,password){
+        this.helper.sendKeys(this.vvLoginEmail,mail);
+        this.helper.sendKeys(this.vvLoginPassword,password)
+        this.helper.click(this.vvDNloginButton);
+
+    }
+
 
 
 

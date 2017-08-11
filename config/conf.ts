@@ -47,15 +47,18 @@ export const config = {
         },
     },
     specs: [
-         "../Specs/Registration/spec_BerlinReg.js",
+         //"../Specs/Registration/spec_BerlinReg.js",
          //"../Specs/Registration/spec_HelsinkiReg.js",
          //"../Specs/Registration/spec_MilanReg.js",
-         //"../Specs/Registration/spec_LisbonReg.js",
+         "../Specs/Registration/spec_LisbonReg.js",
+        //"../Specs/Registration/spec_LisbonVVReg.js",
+
 
         //"../Specs/spec_Redirects.js",
-        //"../Specs/spec_Home.js",
         //"../Specs/spec_CustomerArea.js",
-        //.."../Specs/demo.js"
+
+        //"../Specs/spec_Home.js",
+
     ],
 
     onPrepare: function () {
