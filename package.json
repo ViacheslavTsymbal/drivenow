@@ -4,10 +4,10 @@
   "description": "e2e tests",
   "scripts": {
     "preinstall": "npm install typescript -g",
-    "postinstall": "./node_modules/protractor/bin/webdriver-manager update",
-    "test": "tsc && ./node_modules/protractor/bin/protractor config/conf.js"
+    "postinstall": "webdriver-manager update",
+    "test": "tsc && protractor config/conf.js"
   },
-  "author": "",
+  "author": "Viacheslav Tsymbal",
   "license": "ISC",
   "devDependencies": {
     "@types/jasmine": "^2.5.47",
@@ -19,8 +19,6 @@
     "protractor-jasmine2-html-reporter": "0.0.6",
     "request": "^2.81.0",
     "selenium-standalone-jar": "^2.48.2",
-    "tslint": "^4.5.1",
-    "typescript": "^2.2.1",
     "typescript-deferred": "^0.1.5",
     "xmlhttprequest": "^1.8.0"
   },
