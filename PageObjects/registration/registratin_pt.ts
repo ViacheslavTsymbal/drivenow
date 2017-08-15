@@ -18,6 +18,9 @@ export class Lisabon extends landingPage{
     public vvLoginEmail = element(by.id("txtUsername"));
     public vvLoginPassword = element(by.id("txtPassword"));
     public vvDNloginButton = element(by.id("btnDriveNowLogin"));
+    private street = element(by.id("primaryDetails.street"));
+
+
     public licenceValidFromLisbon(day,month,year){
         this.helper.selectDropDownNumber(this.lDay,day);
         this.helper.selectDropDownNumber(this.lMonth,month);
@@ -60,6 +63,11 @@ export class Lisabon extends landingPage{
         this.helper.sendKeys(this.vvLoginEmail,mail);
         this.helper.sendKeys(this.vvLoginPassword,password)
         this.helper.click(this.vvDNloginButton);
+
+    }
+
+    public enterLisbonStreetDetails(street){
+        this.helper.sendKeys(this.street,street)
 
     }
 

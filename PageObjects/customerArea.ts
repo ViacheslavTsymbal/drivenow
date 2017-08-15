@@ -2,7 +2,6 @@ import {landingPage} from "./landingPage";
 import {errors} from "../Helpers/errors";
 
 const EC = protractor.ExpectedConditions;
-let mkdirp = require('mkdirp');
 let fs = require('fs');
 let file = fs.readFileSync('./Helpers/user.json');
 let userData = JSON.parse(file);
@@ -49,20 +48,16 @@ export class customerArea extends landingPage {
         return this.helper.isDisplayed(this.optionalAddressField);
     };
     public updateEmailField() {
-
         newMail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
         this.helper.sendKeys(this.emailField, newMail);
         console.log("\n\nGenerated new random email: "+newMail)
-
-
     };
     public updatePasswordField(password) {
         this.helper.sendKeys(this.passworField, password);
-
     };
     public updatePinField(pin) {
         let randomPin = ["1111","2222","3333","7777"];
-        pin = this.helper.getRandom(randomPin)
+        pin = this.helper.getRandom(randomPin);
         this.helper.sendKeys(this.pinField, pin);
         this.pinField.getAttribute('value').then(value => {
             pin = value;
@@ -119,8 +114,6 @@ export class customerArea extends landingPage {
             expect(erText[2]).toEqual(er.en_ca_errors.pin);
             expect(erText[3]).toEqual(er.en_ca_errors.sAnswer);
         });
-
-
     };
     public verifyResetButtonFunctionality(){
         this.helper.isNotDisplayed(this.resetButton);

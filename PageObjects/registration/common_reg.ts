@@ -130,6 +130,8 @@ export class regPage extends landingPage {
     };
     public enterStreetDetails(street,streetNumber,additionalStreet) {
         this.helper.sendKeys(this.street,street);
+        this.helper.sendKeys(this.streetNumber_1,streetNumber)
+        this.helper.sendKeys(this.optionalStreet_1,additionalStreet)
     };
     public enterPostalCode(postalCode){
         this.helper.sendKeys(this.postalCode,postalCode);
@@ -183,8 +185,6 @@ export class regPage extends landingPage {
 
     };
     public displayConfirmationText(){
-        this.helper.click(this.nextButton);
-        //browser.pause();
         this.helper.isDisplayed(this.sms1);
         this.message.getText().then(function (text) {
             console.log("confirmation: " + text)

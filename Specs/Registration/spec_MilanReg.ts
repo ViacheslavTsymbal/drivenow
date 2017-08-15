@@ -6,7 +6,7 @@ const reg = new regPage();
 const tenant = new errors();
 const IT = new Milan();
 
-describe("FI registration",function () {
+describe("IT registration",function () {
     beforeEach(function () {
         browser.get("/de/berlin/registration/1");
     });
@@ -86,8 +86,9 @@ describe("FI registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2, 3);
         reg.enterCardCvv(123);
-        reg.validatePromoCodeLogic("DEFAULT",tenant.it.promoCodeMessage)
+        reg.validatePromoCodeLogic("DEFAULT",tenant.it.promoCodeMessage);
         IT.selectCheckBoxesMilan();
+        reg.clickNext();
         reg.displayConfirmationText();
 
     });

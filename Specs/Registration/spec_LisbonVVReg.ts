@@ -17,20 +17,18 @@ describe("Registration",function () {
         browser.get("https://www.beta.drive-now.com/en/lisbon/registration/1");
         //reg.selectTenant(8);
         pt.vvButtonLogin();
-        pt.enterCredentialsForVV("viacheslav.tsymbal+viaverde1@sixt.com","teste123");
+        pt.enterCredentialsForVV("anton.shpylenia+viaverde@sixt.com","teste123");
         //page 2
 
         reg.clickNext();
-        reg.verifyErrorsCount(3);
         reg.getErrorText().then((value => {
             let erText = value.filter(el => el !== "");
             expect(erText[0]).toEqual(tenant.en.gender);
-            expect(erText[1]).toEqual(tenant.en.mobilePhone);
-            expect(erText[2]).toEqual(tenant.en.dateOfBirth);
+            expect(erText[1]).toEqual(tenant.en.dateOfBirth);
 
         }));
         reg.selectGender();
-        reg.enterPhone("00380","939177068");
+       // reg.enterPhone("00380","939177068");
         pt.selectDateOfBirth(9);
         pt.selectMonthOfBirth(12);
         pt.selectYearOfBirth(28);
@@ -52,14 +50,14 @@ describe("Registration",function () {
         pt.enterPin(7777);
         reg.clickNext();
         //page 4
-        browser.pause();
         reg.clickNext();
         reg.verifyErrorsCount(7);
         reg.getErrorText().then((value) => {
             let erText = value.filter(el => el !== "");
             console.log(erText)
         });
-        reg.selectCheckBoxes();
+        reg.selectCheckBoxes(); //REGISTER BUTTON
+        reg.clickNext();
         reg.displayConfirmationText();
 
 

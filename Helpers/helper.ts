@@ -1,5 +1,5 @@
 const EC = protractor.ExpectedConditions;
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let fs = require('fs');
 let xhr = new XMLHttpRequest();
 

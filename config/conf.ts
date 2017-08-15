@@ -33,7 +33,7 @@ export const config = {
             // Get rid of --ignore-certificate yellow warning
             args: ["--no-sandbox", "--test-type=browser", "disable-infobars"],
             // Set download path and avoid prompting for download even though
-            // this is already the default on Chrome but for completeness
+            // this is already the default on Chrome but for completeness`
             prefs: {
                 'credentials_enable_service': false,
                 "download": {
@@ -49,7 +49,7 @@ export const config = {
     specs: [
          //"../Specs/Registration/spec_BerlinReg.js",
          //"../Specs/Registration/spec_HelsinkiReg.js",
-         //"../Specs/Registration/spec_MilanReg.js",
+         "../Specs/Registration/spec_MilanReg.js",
          "../Specs/Registration/spec_LisbonReg.js",
         //"../Specs/Registration/spec_LisbonVVReg.js",
 

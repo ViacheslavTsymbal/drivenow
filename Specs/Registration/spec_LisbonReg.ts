@@ -28,22 +28,20 @@ it("Lisbon registration", function () {
     reg.clickNext();
     //page 2
     reg.clickNext();
-    reg.verifyErrorsCount(16);
     reg.getErrorText().then((value) => {
         let erText = value.filter(el => el !== "");
         expect(erText[0]).toEqual(tenant.en.gender);
         expect(erText[1]).toEqual(tenant.en.fistName);
         expect(erText[2]).toEqual(tenant.en.lastName);
-        expect(erText[3]).toEqual(tenant.en.street);
-        expect(erText[4]).toEqual(tenant.en.streetNumber); //BUG
-        expect(erText[5]).toEqual(tenant.en.postCode);
-        expect(erText[6]).toEqual(tenant.en.city);
-        expect(erText[7]).toEqual(tenant.en.mobilePhone);
-        expect(erText[8]).toEqual(tenant.en.dateOfBirth); //BUG
+        expect(erText[3]).toEqual(tenant.en.addressPT);
+        expect(erText[4]).toEqual(tenant.en.postCode);
+        expect(erText[5]).toEqual(tenant.en.city);
+        expect(erText[6]).toEqual(tenant.en.mobilePhone);
+        expect(erText[7]).toEqual(tenant.en.dateOfBirthPT); //BUG
     });
     reg.selectGender();
     reg.enterName("Automation","BOT");
-    reg.enterStreetDetails("someStreet","22","optional street name");
+    pt.enterLisbonStreetDetails("RUA DE SANTA MARTA 16E 2 ANDAR");
     reg.enterPostalCode("1250-333");
     reg.enterPhone("00380","939177068");
     reg.enterCity("Lisbon");
@@ -82,6 +80,7 @@ it("Lisbon registration", function () {
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
     reg.selectCheckBoxes();
+    reg.clickNext();
     reg.displayConfirmationText();
 
 

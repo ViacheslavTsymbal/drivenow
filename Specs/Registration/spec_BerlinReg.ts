@@ -4,10 +4,10 @@ import {Requests} from "../../Helpers/xhr"
 
 const reg = new regPage();
 const tenant = new errors();
-const api = new Requests()
+const api = new Requests();
 
 
- var flow = browser.controlFlow();
+ let flow = browser.controlFlow();
       
 
 describe("Registration",function () {
@@ -79,6 +79,7 @@ describe("Registration",function () {
         reg.enterCardCvv(123);
         reg.validatePromoCodeLogic("DEFAULT",tenant.de.promoCodeMessage)
         reg.selectCheckBoxes();
+        reg.clickNext();
         reg.displayConfirmationText();
 
     });
