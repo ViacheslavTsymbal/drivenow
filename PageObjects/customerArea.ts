@@ -148,8 +148,6 @@ export class customerArea extends landingPage {
         this.helper.sendKeys(this.streetNumber,streetNumber)
 
     };
-
-
     public updatePostalCode(){
         let randomCode= ['00100','00550','63300'];
         postalCode = this.helper.getRandom(randomCode);
@@ -158,8 +156,6 @@ export class customerArea extends landingPage {
         })
 
     };
-
-
     public updateCity(city){
         this.helper.sendKeys(this.city,city)
 
@@ -169,35 +165,6 @@ export class customerArea extends landingPage {
     };
     public updateMobilePhone(mPhone){
         this.helper.sendKeys(this.mobileNumber,mPhone)
-
-    };
-    public verifyErrorsContactDataBlock(){
-
-        this.helper.click(this.street).then(() => {
-            this.helper.sendKeys(this.street,"1")
-            browser.sleep(5000)
-        });
-        this.helper.click(this.city);
-        this.street.getAttribute('value').then((value => console.log(value)))
-
-        browser.sleep(5000)
-        this.helper.clearKeys(this.city);
-        this.helper.clearKeys(this.postalCode);
-        this.helper.clearKeys(this.mobileCode);
-        this.helper.clearKeys(this.mobileNumber);
-        this.errorMessage.getText().then((text) => {
-            let erText = text.filter(el => el !== "");
-
-            console.log(erText);
-            expect(erText[4]).toEqual(er.en_ca_errors.street);
-            expect(erText[5]).toEqual(er.en_ca_errors.streetNumber);
-            expect(erText[6]).toEqual(er.en_ca_errors.postalCode);
-            expect(erText[7]).toEqual(er.en_ca_errors.city);
-
-        });
-
-
-
 
     };
     public clickResetButton(){
@@ -217,7 +184,7 @@ export class customerArea extends landingPage {
             },2000).then(function () {
                 console.log("\nUpdated contact:streetName to " + street + " and contact:postalCode to " + postalCode );});
         }else {
-        console.log("Whoops, something went wrong, file is not updated")};
+        console.log("Whoops, something went wrong, file is not updated")}
     });
 
     };

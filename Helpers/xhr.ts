@@ -1,4 +1,8 @@
+import {Helper} from "./helper";
+
+let helpers = new Helper();
 let r =  require('request');
+let regLink;
 let auth;
 
 export class Requests{
@@ -83,6 +87,9 @@ export class Requests{
         },
      )
  }
+
+
+
 
 
 

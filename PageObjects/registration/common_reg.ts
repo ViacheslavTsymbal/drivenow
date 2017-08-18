@@ -55,16 +55,14 @@ export class regPage extends landingPage {
     public creditCardMonth = element(by.name("payment-CC-payment-method-valid-until-month"));
     public creditCardCvv_0 = element(by.css("label[class*='no-wrap-clip'][for='paymentDetails.payment-CC-payment-method-security-code']"));
     public creditCardCvv_1 = element(by.name("payment-CC-payment-method-security-code"));
-    private promocode = element(by.id("registrationDetails.promocode"));
-    private regText = element(by.css("[class='registration-header hidden-md hidden-sm hidden-xs']"));
-    private redeemButton = element.all(by.css("button[class*='button blue']")).get(0);
+    public promocode = element(by.id("registrationDetails.promocode"));
+    public regText = element(by.css("[class='registration-header hidden-md hidden-sm hidden-xs']"));
+    public redeemButton = element.all(by.css("button[class*='button blue']")).get(0);
 
-
-
-    private agreeCheckbox = element(by.id("approveTos-container"));
-    private errorMessage = element.all(by.css("[class*='content-message']"));
-    private message = element.all(by.css("[class*='cms-injected']")).get(0);
-    private sms1 = element(by.css("[class='registration-header']"));
+    public agreeCheckbox = element(by.id("approveTos-container"));
+    public errorMessage = element.all(by.css("[class*='content-message']"));
+    public message = element.all(by.css("[class*='cms-injected']")).get(0);
+    public sms1 = element(by.css("[class='registration-header']"));
 
 
 
@@ -192,7 +190,6 @@ export class regPage extends landingPage {
         })
 
     };
-
     public selectDliCountry(day,month,year){
         this.helper.scrollIntoScreenCenter(this.dLiCountryDay)
         this.helper.selectDropDownNumber(this.dLiCountryDay,day);
@@ -201,7 +198,6 @@ export class regPage extends landingPage {
 
 
     };
-
     public chooseCreditCard(card){
         this.helper.selectDropDownNumber(this.creditCardDropdown,card)
     };
@@ -220,22 +216,6 @@ export class regPage extends landingPage {
             this.helper.sendKeys(this.creditCardCvv_1,cvv)
             })
     };
-
-
-
-
-    public enterMobileCode(value) {
-        this.mobileCode.clear();
-
-
-    }
-    public enterMobilePhone(value) {
-        this.mobileNumber.clear().then(() => {
-            this.mobileNumber.sendKeys(value)
-
-        });
-    }
-
     public validatePromoCodeLogic(code, message){
         this.helper.sendKeys(this.promocode,code)
         this.helper.click(this.redeemButton);

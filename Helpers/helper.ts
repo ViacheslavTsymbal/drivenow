@@ -1,7 +1,9 @@
 const EC = protractor.ExpectedConditions;
+let notifier = require('mail-notifier');
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let fs = require('fs');
 let xhr = new XMLHttpRequest();
+let regLink
 
 
 export class Helper {
@@ -176,6 +178,7 @@ export class Helper {
      * @param elementToClick
      * @returns {webdriver.promise.Promise<void>}
      */
+
     public showElementOnHoverAndClick(elementOnHover, elementToClick) {
         return browser.findElements(elementOnHover.locator()).then((elements) => {
             browser.actions()
@@ -187,6 +190,8 @@ export class Helper {
             });
         });
     };
+
+
     /**
      *
      * @param element
@@ -197,23 +202,6 @@ export class Helper {
             EC.visibilityOf(element),
             EC.elementToBeClickable(element));
     };
-
-    public mail(){
-        let notifier = require('mail-notifier');
-
-        let imap = {
-            user: "meetjoeb11ack@gmail.com",
-            password: "Nhjudfhnhjudfh1123",
-            host: "imap.gmail.com",
-            port: 993, // imap port
-            tls: true,// use secure connection
-            tlsOptions: { rejectUnauthorized: false },
-            markSeen:true,
-
-        };
-
-        return notifier(imap).on('mail',function(mail){console.log(mail);}).start();
-    }
     public getRandom(obj){
 
         let keys = Object.keys(obj);
@@ -221,27 +209,54 @@ export class Helper {
 
 
     }
-
     public isVisible(element){
         return EC.visibilityOf(element)
     };
-
-
     public get(){
         browser.wait(function () {
             let path = 'https://beta.content-api.drivenow.com/web/crm/bonusminutes/private?country=fi&language=en'
-            xhr.open('GET',path,false)
+            xhr.open('GET',path,false);
             xhr.setRequestHeader("X-Auth-Token", 'd3e03345ae2d17c5cd022e240efff6df');
             xhr.setRequestHeader("X-Api-Key", 'rz7a9SgrPfHwTz3gFza81XnoXNQ7IuIU');
-            xhr.send()
+            xhr.send();
             if (xhr.status != 200) {
                 console.log(xhr.status + ': ' + xhr.statusText);
             } else {
-                console.log("????")
+                console.log("????");
                 console.log(JSON.parse(xhr.responseText));
             }
         },100000)
 
+
+    }
+
+    public getEmailLink(){
+        browser.sleep(5000);
+        
+        let imap = {
+            user: "meetjoeb11ack@gmail.com",
+            password: "Nhjudfhnhjudfh1123",
+            host: "imap.gmail.com",
+            port: 993, // imap port
+            tls: true,// use secure connection
+            tlsOptions: { rejectUnauthorized: false },
+            markSeen:false,
+
+        };
+
+         notifier(imap).on('mail',function(mail){
+                if(regLink === mail.text.match(/(https:.*\?)(.*(country=)?.*&(city=)?.*&(language=)?.*&(code=)?.*)/g))
+                {
+                    console.log(regLink);
+                    browser.get(regLink.toString());
+
+                }
+            else{
+                console.log("invalid email");
+            }
+
+
+        }).start();
 
     }
 

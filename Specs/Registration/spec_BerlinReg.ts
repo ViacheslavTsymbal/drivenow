@@ -7,12 +7,12 @@ const tenant = new errors();
 const api = new Requests();
 
 
- let flow = browser.controlFlow();
-      
+
 
 describe("Registration",function () {
     beforeEach(function () {
     browser.get("/de/berlin/registration/1");
+
 
 
 });
@@ -77,7 +77,7 @@ describe("Registration",function () {
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2,3);
         reg.enterCardCvv(123);
-        reg.validatePromoCodeLogic("DEFAULT",tenant.de.promoCodeMessage)
+        reg.validatePromoCodeLogic("DEFAULT",tenant.de.promoCodeMessage);
         reg.selectCheckBoxes();
         reg.clickNext();
         reg.displayConfirmationText();

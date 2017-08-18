@@ -19,7 +19,6 @@ describe("Registration",function () {
         pt.vvButtonLogin();
         pt.enterCredentialsForVV("anton.shpylenia+viaverde@sixt.com","teste123");
         //page 2
-
         reg.clickNext();
         reg.getErrorText().then((value => {
             let erText = value.filter(el => el !== "");
@@ -28,7 +27,6 @@ describe("Registration",function () {
 
         }));
         reg.selectGender();
-       // reg.enterPhone("00380","939177068");
         pt.selectDateOfBirth(9);
         pt.selectMonthOfBirth(12);
         pt.selectYearOfBirth(28);
@@ -59,11 +57,8 @@ describe("Registration",function () {
         reg.selectCheckBoxes(); //REGISTER BUTTON
         reg.clickNext();
         reg.displayConfirmationText();
-
-
-
-
-
     });
+
+
 
 });

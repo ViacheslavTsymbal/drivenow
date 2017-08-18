@@ -19,9 +19,6 @@ export class landingPage {
     public deRegIcon =  element(by.className('icon icon-germany'));
 
 
-
-
-
     public Login(mail,password){
         browser.get(this.url);
         this.helper.click(this.userProfileIcon);

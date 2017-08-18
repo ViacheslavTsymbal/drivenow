@@ -7,12 +7,14 @@ const tenant = new errors();
 const IT = new Milan();
 
 describe("IT registration",function () {
+
     beforeEach(function () {
         browser.get("/de/berlin/registration/1");
     });
 
 
     it("Milan registration", function () {
+        //Page 1
         reg.selectTenant(7);
         reg.verifyErrorsCount(6);
         reg.getErrorText().then((text) => {
@@ -30,7 +32,7 @@ describe("IT registration",function () {
         reg.enterSecurityAnswer("meetjoeblack");
         reg.clickNext();
 
-        //Second page
+        //Page 2
         reg.verifyErrorsCount(16);
         reg.getErrorText().then((text) => {
             let erText = text.filter(el => el !== "");
@@ -72,6 +74,7 @@ describe("IT registration",function () {
         IT.enterDrivingLicenceMilan(12345689);
         reg.selectDliCountry(5, 5, 5);
         reg.clickNext();
+
         //Page 4
         reg.clickNext();
         reg.getErrorText().then((text) => {
@@ -80,8 +83,7 @@ describe("IT registration",function () {
             expect(erText[1]).toEqual(tenant.it.cardNumber);
             expect(erText[2]).toEqual(tenant.it.cardDates);
             expect(erText[3]).toEqual(tenant.it.cvvCode);
-        });
-        //page 4
+        })
         reg.chooseCreditCard(2);
         reg.enterCardNumber(4153013999701048);
         reg.enterCreditCardDates(2, 3);
