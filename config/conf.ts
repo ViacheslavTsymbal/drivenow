@@ -47,15 +47,17 @@ export const config = {
         },
     },
     specs: [
-        // "../Specs/Registration/spec_BerlinReg.js",
-        // "../Specs/Registration/spec_HelsinkiReg.js",
+         "../Specs/Registration/spec_BerlinReg.js",
+         "../Specs/Registration/spec_HelsinkiReg.js",
+         "../Specs/Registration/spec_LisbonReg.js",
         // "../Specs/Registration/spec_MilanReg.js",
-        // //"../Specs/Registration/spec_LisbonReg.js",
-        // //"../Specs/Registration/spec_LisbonVVReg.js",
-        // "../Specs/spec_Redirects.js",
-        // "../Specs/spec_CustomerArea.js",
 
-         "../Specs/password-reset.js",
+        //"../Specs/Registration/spec_LisbonVVReg.js",
+        "../Specs/spec_Redirects.js",
+
+        "../Specs/spec_CustomerArea.js",
+
+         //"../Specs/password-reset.js",
 
 
     ],
@@ -64,9 +66,9 @@ export const config = {
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
         //browser.driver.manage().window().setSize(1920, 1080);
-        browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
-            console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
-        });
+        // browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
+        //     console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
+        // });
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
             savePath: "./Reports/",
             takeScreenshotsOnlyOnFailures: true,

@@ -62,11 +62,10 @@ it("Lisbon registration", function () {
     pt.enterDrivingLicenceLisabon(123456789);
     pt.enterDrivingLicenceCountry(0);
     pt.licenceValidFromLisbon(5,5,5);
-    pt.licenceValidToLisbon(12,11,1);
+    pt.licenceValidToLisbon(12,11,1);;
     pt.enterPin(7777);
     reg.clickNext();
     //page 4
-    reg.clickNext();
     reg.verifyErrorsCount(7);
     reg.getErrorText().then((value) => {
         let erText = value.filter(el => el !== "");
@@ -79,6 +78,7 @@ it("Lisbon registration", function () {
     reg.enterCardNumber(4153013999701048);
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
+    reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
     reg.selectCheckBoxes();
     reg.clickNext();
     reg.displayConfirmationText();

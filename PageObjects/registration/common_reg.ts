@@ -55,7 +55,7 @@ export class regPage extends landingPage {
     public creditCardMonth = element(by.name("payment-CC-payment-method-valid-until-month"));
     public creditCardCvv_0 = element(by.css("label[class*='no-wrap-clip'][for='paymentDetails.payment-CC-payment-method-security-code']"));
     public creditCardCvv_1 = element(by.name("payment-CC-payment-method-security-code"));
-    public promocode = element(by.id("registrationDetails.promocode"));
+    public promocode = element(by.name("promocode"));
     public regText = element(by.css("[class='registration-header hidden-md hidden-sm hidden-xs']"));
     public redeemButton = element.all(by.css("button[class*='button blue']")).get(0);
 
@@ -63,7 +63,6 @@ export class regPage extends landingPage {
     public errorMessage = element.all(by.css("[class*='content-message']"));
     public message = element.all(by.css("[class*='cms-injected']")).get(0);
     public sms1 = element(by.css("[class='registration-header']"));
-
 
 
     //page 1
@@ -217,7 +216,8 @@ export class regPage extends landingPage {
             })
     };
     public validatePromoCodeLogic(code, message){
-        this.helper.sendKeys(this.promocode,code)
+        //this.helper.click(this.promocode_0);
+        this.helper.sendKeys(this.promocode,code);
         this.helper.click(this.redeemButton);
         browser.sleep(1000);
         this.regText.getText().then((text)=>{

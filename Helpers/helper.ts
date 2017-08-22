@@ -232,7 +232,7 @@ export class Helper {
 
     public getEmailLink(){
         browser.sleep(5000);
-        
+
         let imap = {
             user: "meetjoeb11ack@gmail.com",
             password: "Nhjudfhnhjudfh1123",

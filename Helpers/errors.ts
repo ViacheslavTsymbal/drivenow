@@ -12,7 +12,7 @@ export class errors{
     "fistName":"Please enter first name",
     "lastName":"Please enter last name",
     "street":"Please enter street",
-    "addressPT":"Please enter address",
+    "addressPT":"Please enter your address",
     "streetNumber":"No.",
     "postCode":"Postcode",
     "city":"Please enter city",
@@ -27,6 +27,7 @@ export class errors{
     "cardNumber":"Please enter credit card number",
     "validUntil":"Please enter a valid value",
     "securityCode":"Please enter security code",
+    "promocode":"Thank you! The registration fee has been changed to €0 incl. 20 bonus minutes."
 
 
 };
@@ -129,6 +130,9 @@ export class errors{
         "city":"Please enter a city",
 
 };
+    public pt = {
+        "promocode":"Obrigado! A taxa de inscrição foi alterada para €0 incl. 20 Minutos de bónus.",
+    }
 
 
 
