@@ -78,7 +78,7 @@ it("Lisbon registration", function () {
     reg.enterCardNumber(4153013999701048);
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
-    reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
+    //reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
     reg.selectCheckBoxes();
     reg.clickNext();
     reg.displayConfirmationText();

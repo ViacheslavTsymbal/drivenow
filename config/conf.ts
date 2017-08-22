@@ -47,8 +47,8 @@ export const config = {
         },
     },
     specs: [
-         "../Specs/Registration/spec_BerlinReg.js",
-         "../Specs/Registration/spec_HelsinkiReg.js",
+         //"../Specs/Registration/spec_BerlinReg.js",
+         //"../Specs/Registration/spec_HelsinkiReg.js",
          "../Specs/Registration/spec_LisbonReg.js",
         // "../Specs/Registration/spec_MilanReg.js",
 
