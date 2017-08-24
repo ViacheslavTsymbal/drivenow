@@ -2,9 +2,6 @@ let Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
 let failFast = require("protractor-fail-fast");
 let userDataFile = require('../Helpers/user.json');
 
-
-
-
 export const config = {
     directConnect: true,
     seleniumServerJar: require("selenium-standalone-jar").path,
@@ -46,22 +43,6 @@ export const config = {
             },
         },
     },
-    specs: [
-         //"../Specs/Registration/spec_BerlinReg.js",
-         //"../Specs/Registration/spec_HelsinkiReg.js",
-         "../Specs/Registration/spec_LisbonReg.js",
-        // "../Specs/Registration/spec_MilanReg.js",
-
-        //"../Specs/Registration/spec_LisbonVVReg.js",
-        "../Specs/spec_Redirects.js",
-
-        "../Specs/spec_CustomerArea.js",
-
-         //"../Specs/password-reset.js",
-
-
-    ],
-
     onPrepare: function () {
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
@@ -74,4 +55,24 @@ export const config = {
             takeScreenshotsOnlyOnFailures: true,
         }));
     },
+
+    specs: [
+        //-----------------------------------------------------------//
+        //"../Specs/Registration/spec_LisbonENreg.js",
+        "../Specs/Registration/spec_LisbonPTreg.js",
+        //"../Specs/Registration/spec_LisbonVVReg.js",
+        //-----------------------------------------------------------//
+        //"../Specs/Registration/spec_BerlinReg.js",
+        //----------------------------------------------------------//
+        //"../Specs/Registration/spec_HelsinkiReg.js",
+        //----------------------------------------------------------//
+
+        // "../Specs/Registration/spec_MilanReg.js",
+        //"../Specs/spec_Redirects.js",
+        //"../Specs/spec_CustomerArea.js",
+        //"../Specs/password-reset.js",
+
+
+    ],
+
 };

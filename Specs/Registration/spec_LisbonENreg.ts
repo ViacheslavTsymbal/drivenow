@@ -8,15 +8,13 @@ const pt = new Lisabon();
 
 describe("Registration",function () {
     beforeEach(function () {
-       //browser.get("/de/berlin/registration/1");
+        console.log("---------------EN non VV registration test with business account--------------")
+        //browser.get("/de/berlin/registration/1");
     });
-
-
 
 it("Lisbon registration", function () {
     browser.get("https://www.beta.drive-now.com/en/lisbon/registration/1");
     //reg.selectTenant(8);
-    reg.clickNext();
     reg.verifyErrorsCount(3);
     reg.getErrorText().then((value => {
         let erText = value.filter(el => el !== "");
@@ -26,8 +24,9 @@ it("Lisbon registration", function () {
     reg.enterUniqueEmail();
     reg.enterPassword("Qazwsx123");
     reg.clickNext();
+
     //page 2
-    reg.clickNext();
+    reg.verifyErrorsCount(14);
     reg.getErrorText().then((value) => {
         let erText = value.filter(el => el !== "");
         expect(erText[0]).toEqual(tenant.en.gender);
@@ -37,7 +36,7 @@ it("Lisbon registration", function () {
         expect(erText[4]).toEqual(tenant.en.postCode);
         expect(erText[5]).toEqual(tenant.en.city);
         expect(erText[6]).toEqual(tenant.en.mobilePhone);
-        expect(erText[7]).toEqual(tenant.en.dateOfBirthPT); //BUG
+        expect(erText[7]).toEqual(tenant.en.dateOfBirthPT);
     });
     reg.selectGender();
     reg.enterName("Automation","BOT");
@@ -48,9 +47,10 @@ it("Lisbon registration", function () {
     pt.selectDateOfBirth(9);
     pt.selectMonthOfBirth(12);
     pt.selectYearOfBirth(28);
+    reg.clickaAtivateDNforBusinessCheckbox();
     reg.clickNext();
+
     //page 3
-    reg.clickNext();
     reg.verifyErrorsCount(11);
     reg.getErrorText().then((value) => {
         let erText = value.filter(el => el !== "");
@@ -65,6 +65,7 @@ it("Lisbon registration", function () {
     pt.licenceValidToLisbon(12,11,1);;
     pt.enterPin(7777);
     reg.clickNext();
+
     //page 4
     reg.verifyErrorsCount(7);
     reg.getErrorText().then((value) => {
@@ -78,14 +79,10 @@ it("Lisbon registration", function () {
     reg.enterCardNumber(4153013999701048);
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
-    //reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
+    reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
     reg.selectCheckBoxes();
     reg.clickNext();
     reg.displayConfirmationText();
-
-
-
-
 
     });
 

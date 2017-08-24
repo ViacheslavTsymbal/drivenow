@@ -8,6 +8,7 @@ const fi = new Helsinki();
 
 describe("FI registration",function () {
     beforeEach(function () {
+        console.log("---------------FI registration test--------------")
         browser.get("/de/berlin/registration/1");
     });
 
@@ -75,6 +76,7 @@ describe("FI registration",function () {
         reg.validatePromoCodeLogic("DEFAULT",tenant.fi.promoCodeMessage)
         reg.selectCheckBoxes();
         reg.clickNext();
+        browser.pause();
         reg.displayConfirmationText();
 
 

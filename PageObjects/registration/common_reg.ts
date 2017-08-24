@@ -58,11 +58,12 @@ export class regPage extends landingPage {
     public promocode = element(by.name("promocode"));
     public regText = element(by.css("[class='registration-header hidden-md hidden-sm hidden-xs']"));
     public redeemButton = element.all(by.css("button[class*='button blue']")).get(0);
-
     public agreeCheckbox = element(by.id("approveTos-container"));
     public errorMessage = element.all(by.css("[class*='content-message']"));
     public message = element.all(by.css("[class*='cms-injected']")).get(0);
     public sms1 = element(by.css("[class='registration-header']"));
+    public businessActivatorCheckbox = element(by.css("[class='label-wrapper'][for='primaryDetails.businessTripsActivator']"));
+    public businessAdressCheckbox = element(by.css("[class='label-wrapper'][for='businessTripDetails.usingBusinessAddress']"));
 
 
     //page 1
@@ -72,7 +73,8 @@ export class regPage extends landingPage {
 
     };
     public verifyErrorsCount(num){
-        this.helper.click(this.nextButton)
+        this.helper.click(this.nextButton);
+        browser.sleep(500);
         this.errorMessage.count()
             .then(function (size) {
                 expect(size).toEqual(num);
@@ -224,6 +226,12 @@ export class regPage extends landingPage {
             expect(text).toEqual(message)
         });
 
+    }
+    public clickaAtivateDNforBusinessCheckbox(){
+        this.helper.click(this.businessActivatorCheckbox);
+    }
+    public clickAddBusinessAddressCheckbox(){
+        this.helper.click(this.businessAdressCheckbox)
     }
 
 

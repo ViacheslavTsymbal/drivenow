@@ -131,6 +131,24 @@ export class errors{
 
 };
     public pt = {
+        "email":"O seu endereço de e-mail serve como login na Área de Cliente.",
+        "password":"Por favor coloque uma password válida",
+        //page 2
+        "gender":"Selecione o género",
+        "fistName":"Digite o primeiro nome",
+        "lastName":"Digite o apelido",
+        "addressPT":"Insira a morada",
+        "postCode":"Código Postal",
+        "city":"Insira a cidade",
+        "mobilePhone":"Digite o número de telemóvel",
+        "dateOfBirth":"Selecione uma data de nascimento válida",
+        "licence":"Digite o número da sua carta de condução.",
+        "licenceDate":"Selecione a data de emissão",
+        "pin":"Digite PIN composto por 4 dígitos",
+        "cardProvider":"Selecione a empresa gestora do método de pagamento",
+        "cardNumber":"Por favor insira um Cartão de Crédito",
+        "validUntil":"Por favor insira um valor válido",
+        "securityCode":"Por favor insira o código de segurança",
         "promocode":"Obrigado! A taxa de inscrição foi alterada para €0 incl. 20 Minutos de bónus.",
     }
 
