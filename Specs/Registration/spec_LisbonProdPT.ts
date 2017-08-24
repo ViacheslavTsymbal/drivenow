@@ -8,11 +8,12 @@ const pt = new Lisabon();
 
 describe("Registration",function () {
     beforeEach(function () {
-        console.log("---------------PT non VV registration test--------------")
-        //browser.get("/de/berlin/registration/1");
+        console.log("---------------!!!PRODUCTION!!!PT non VV registration test--------------")
+        browser.get("https://www.drive-now.com");
+        browser.manage().addCookie("enabledFeatures","{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}")
     });
     it("Lisbon registration", function () {
-        browser.get("https://www.beta.drive-now.com/pt/lisbon/registration/1");
+        browser.get("https://www.drive-now.com/pt/lisbon/registration/1");
         //reg.selectTenant(8);
         reg.verifyErrorsCount(3);
         reg.getErrorText().then((value => {
@@ -71,7 +72,7 @@ describe("Registration",function () {
         pt.licenceValidToLisbon(12,11,1);;
         pt.enterPin(7777);
         reg.clickNext();
-        //page 4
+        //page 4s
         reg.verifyErrorsCount(7);
         reg.getErrorText().then((value) => {
             let erText = value.filter(el => el !== "");
@@ -80,11 +81,11 @@ describe("Registration",function () {
             expect(erText[2]).toEqual(tenant.pt.validUntil);
             expect(erText[3]).toEqual(tenant.pt.securityCode);
         });
-        reg.chooseCreditCard(2);
-        reg.enterCardNumber(5506900140100107);
-        reg.enterCreditCardDates(2,3);
-        reg.enterCardCvv(123);
-        reg.validatePromoCodeLogic("DEFAULT",tenant.pt.promocode); //BUG
+        reg.chooseCreditCard(1);
+        reg.enterCardNumber(4731185604795267);
+        reg.enterCreditCardDates(9,1);
+        reg.enterCardCvv(231);
+        reg.validatePromoCodeLogic("SLAVA",tenant.pt.promocode); //BUG
         reg.selectCheckBoxes();
         reg.clickNext();
         reg.displayConfirmationText();

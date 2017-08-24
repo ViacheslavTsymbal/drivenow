@@ -228,6 +228,7 @@ export class regPage extends landingPage {
 
     }
     public clickaAtivateDNforBusinessCheckbox(){
+        this.helper.scrollIntoScreenCenter(this.businessActivatorCheckbox)
         this.helper.click(this.businessActivatorCheckbox);
     }
     public clickAddBusinessAddressCheckbox(){

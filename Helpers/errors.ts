@@ -27,7 +27,7 @@ export class errors{
     "cardNumber":"Please enter credit card number",
     "validUntil":"Please enter a valid value",
     "securityCode":"Please enter security code",
-    "promocode":"Thank you! The registration fee has been changed to €0 incl. 20 bonus minutes."
+    "promocode":"Thank you! The registration fee has been changed to €0 incl. 2 bonus minutes."
 
 
 };
@@ -149,7 +149,7 @@ export class errors{
         "cardNumber":"Por favor insira um Cartão de Crédito",
         "validUntil":"Por favor insira um valor válido",
         "securityCode":"Por favor insira o código de segurança",
-        "promocode":"Obrigado! A taxa de inscrição foi alterada para €0 incl. 20 Minutos de bónus.",
+        "promocode":"Obrigado! A taxa de inscrição foi alterada para €0 incl. 2 Minutos de bónus.",
     }
 
 

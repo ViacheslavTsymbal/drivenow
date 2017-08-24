@@ -59,8 +59,13 @@ export const config = {
     specs: [
         //-----------------------------------------------------------//
         //"../Specs/Registration/spec_LisbonENreg.js",
-        "../Specs/Registration/spec_LisbonPTreg.js",
-        //"../Specs/Registration/spec_LisbonVVReg.js",
+        //"../Specs/Registration/spec_LisbonPTreg.js",
+        //"../Specs/Registration/spec_LisbonPTreg.js",
+
+        "../Specs/Registration/spec_LisbonProdPT.js",
+        "../Specs/Registration/spec_LisbonProdEN.js",
+
+
         //-----------------------------------------------------------//
         //"../Specs/Registration/spec_BerlinReg.js",
         //----------------------------------------------------------//
