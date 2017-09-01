@@ -1,20 +1,19 @@
 const EC = protractor.ExpectedConditions;
 let notifier = require('mail-notifier');
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-let fs = require('fs');
 let xhr = new XMLHttpRequest();
-let regLink
-
+let regLink;
+let fs = require('fs');
+let file = fs.readFileSync('Helpers/user.json');
+let userData = JSON.parse(file);
+let flow = browser.controlFlow();
 
 export class Helper {
 
     public SHORT_WAIT: number = 5000;
     public NORMAL_WAIT: number = 10000;
     public LONG_WAIT: number = 30000;
-    /**
-     * Returns timestamp
-     * @returns {number}
-     */
+
     public static  getTimeStamp() {
         return (Math.floor(Date.now() / 1000));
     };
@@ -23,12 +22,6 @@ export class Helper {
         return value + Helper.getTimeStamp().toString();
     };
 
-    /**
-     * Waits for element to be visible and clickable and clicks after.
-     * Is used to click only on buttons
-     * @param element
-     * @returns {Promise<void>}
-     */
     public selectDropDownNumber(element,number){
 
             let options = element.all(by.tagName("option"))
@@ -54,12 +47,6 @@ export class Helper {
             .then(() => element.click());
     }
 
-    /**
-     * Waits for element to be displayed and clicks after.
-     * Is used to click non button elements
-     * @param element
-     * @returns {Promise<void>}
-     */
     public nonButtonClick(element) {
         return browser.wait(
             element.isDisplayed(),
@@ -68,13 +55,6 @@ export class Helper {
             .then(() => element.click());
     }
 
-    /**
-     * Waits for element to be displayed and sends keys
-     *
-     * @param element
-     * @param value
-     * @returns {Promise<void>}
-     */
     public sendKeys(element: protractor.ElementFinder, value: string) {
          browser.wait(
             this.isClickable(element),
@@ -90,13 +70,6 @@ export class Helper {
             });
     };
 
-    /**
-     * Waits for element to be displayed and clear keys
-     *
-     * @param element
-     * @param value
-     * @returns {Promise<void>}
-     */
     public clearKeys(element: protractor.ElementFinder) {
         browser.wait(
             this.isClickable(element),
@@ -108,11 +81,6 @@ export class Helper {
             });
     };
 
-    /**
-     * Waits for element is present in DOM
-     * @param element
-     * @returns {webdriver.promise.Promise<T>}
-     */
     public isDisplayed(element) {
         return browser.wait(
             EC.presenceOf(element),
@@ -120,11 +88,6 @@ export class Helper {
             "Element did not show up - " + element.locator().toString());
     };
 
-    /**
-     * Waits for element is not present in DOM
-     * @param element
-     * @returns {webdriver.promise.Promise<T>}
-     */
     public isNotDisplayed(element: protractor.ElementFinder) {
         return browser.wait(
             EC.stalenessOf(element),
@@ -132,18 +95,6 @@ export class Helper {
             "Element did not hide - " + element.locator().toString());
     };
 
-    /**
-     * Adds unique timestamp to passed string
-     * @param value
-     * @returns {string}
-     */
-
-
-    /**
-     * Scrolls Page so that element would be centered.
-     * @param element
-     * @returns {Promise<R>}
-     */
     public scrollIntoScreenCenter(element: protractor.ElementFinder): protractor.promise.Promise<{}> {
         return element.getLocation()
             .then(function (location) {
@@ -155,10 +106,6 @@ export class Helper {
             });
     };
 
-    /**
-     * Get the inner text value for the Component.
-     * @returns {webdriver.promise.Promise<string>}
-     */
     public getText(element: protractor.ElementFinder): webdriver.promise.Promise<string> {
         return element.getTagName()
             .then(t => {
@@ -172,13 +119,6 @@ export class Helper {
             });
     };
 
-    /**
-     * Moves mouse over elementOnHover and afterwards clicks on elementToClick.
-     * @param elementOnHover
-     * @param elementToClick
-     * @returns {webdriver.promise.Promise<void>}
-     */
-
     public showElementOnHoverAndClick(elementOnHover, elementToClick) {
         return browser.findElements(elementOnHover.locator()).then((elements) => {
             browser.actions()
@@ -191,12 +131,6 @@ export class Helper {
         });
     };
 
-
-    /**
-     *
-     * @param element
-     * @returns {webdriver.until.Condition<T>}
-     */
     private isClickable(element: protractor.ElementFinder) {
         return EC.and(
             EC.visibilityOf(element),
@@ -257,6 +191,26 @@ export class Helper {
 
 
         }).start();
+
+    }
+    public saveEmail(userEmail){
+        flow.execute(function () {
+            userData.newUserEmail = userEmail;
+            fs.writeFile("Helpers/user.json", JSON.stringify(userData,null,2));
+            console.log("\nUpdated contact:userEmail to " + userEmail);
+            return true;
+            
+        })
+        // browser.wait(function () {
+        //     userData.newUserEmail = userEmail;
+        //     fs.writeFileSync("Helpers/user.json", JSON.stringify(userData,null,2));
+        //     return true;
+        // },2000).then(function () {
+        //     console.log("\nUpdated contact:userEmail to " + userEmail);
+        // });
+
+
+
 
     }
 

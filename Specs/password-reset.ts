@@ -10,9 +10,9 @@ let flow = browser.controlFlow();
 describe("password-reset",function () {
     
     it("getEmailLink", function () {
-      browser.get("https://www.beta.drive-now.com/it/milan/registration/4");
-        let x = element(by.css((".checkbox-input#${'.registrationDetails.approveTos'}-container input")));
-        helpers.click(x)
+
+
+
     });
 
 

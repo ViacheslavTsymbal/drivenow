@@ -6,10 +6,12 @@ const reg = new regPage();
 const tenant = new errors();
 const pt = new Lisabon();
 
+
+
 describe("Registration",function () {
     beforeEach(function () {
-        console.log("---------------EN non VV registration test with business account--------------")
-        //browser.get("/de/berlin/registration/1");
+        console.log("---------------EN non VV registration test with business account VISA--------------");
+        let email = reg.createUniqueEmail();
     });
 
 it("Lisbon registration", function () {
@@ -79,7 +81,7 @@ it("Lisbon registration", function () {
     reg.enterCardNumber(4153013999701048);
     reg.enterCreditCardDates(2,3);
     reg.enterCardCvv(123);
-    reg.validatePromoCodeLogic("SLAVA",tenant.en.promocode);
+    reg.validatePromoCodeLogic("DEFAULT",tenant.en.promocode);
     reg.selectCheckBoxes();
     reg.clickNext();
     reg.displayConfirmationText();

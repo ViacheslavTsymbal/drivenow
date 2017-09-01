@@ -8,8 +8,10 @@ const pt = new Lisabon();
 
 describe("Registration",function () {
     beforeEach(function () {
-        console.log("---------------PT non VV registration test--------------")
+        console.log("---------------PT non VV registration test MasterCard--------------")
         //browser.get("/de/berlin/registration/1");
+        let email = reg.createUniqueEmail();
+
     });
     it("Lisbon registration", function () {
         browser.get("https://www.beta.drive-now.com/pt/lisbon/registration/1");

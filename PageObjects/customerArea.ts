@@ -188,6 +188,12 @@ export class customerArea extends landingPage {
     });
 
     };
+    public getNewUserEmail(){
+        let fs = require("fs")
+        let userDataFile1 = fs.readFileSync('./Helpers/user.json');
+        let userDataFile = JSON.parse(userDataFile1);
+        return userDataFile;
+    }
 
 }
 

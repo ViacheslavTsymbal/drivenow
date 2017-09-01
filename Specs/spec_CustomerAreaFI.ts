@@ -7,7 +7,10 @@ const ca = new customerArea();
 
 describe("Customer Area tests", function () {
     beforeAll(function () {
-        lp.Login(browser.params.user.email,browser.params.user.password)
+        let userDataFile = ca.getNewUserEmail();
+        browser.sleep(10000);
+        console.log("waiting for events to sync")
+        lp.Login(userDataFile.newUserEmail, browser.params.user.password)
     });
 
 

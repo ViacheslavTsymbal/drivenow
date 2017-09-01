@@ -9,8 +9,8 @@ const pt = new Lisabon();
 describe("Registration",function () {
     beforeEach(function () {
         console.log("---------------!!!PRODUCTION!!! EN non VV registration test with business account --------------");
-        browser.get("https://www.drive-now.com");
-        browser.manage().addCookie("enabledFeatures","{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}")
+        //browser.get("https://www.drive-now.com");
+        //browser.manage().addCookie("enabledFeatures","{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}")
     });
 
     it("Lisbon registration", function () {
@@ -43,7 +43,7 @@ describe("Registration",function () {
         reg.enterName("Automation","BOT");
         pt.enterLisbonStreetDetails("RUA DE SANTA MARTA 16E 2 ANDAR");
         reg.enterPostalCode("1250-333");
-        reg.enterPhone("00380","939177068");
+        reg.enterPhone("0049","15166048149");
         reg.enterCity("Lisbon");
         pt.selectDateOfBirth(9);
         pt.selectMonthOfBirth(12);
@@ -83,6 +83,7 @@ describe("Registration",function () {
         reg.validatePromoCodeLogic("SLAVA",tenant.en.promocode);
         reg.selectCheckBoxes();
         reg.clickNext();
+        //browser.pause();
         reg.displayConfirmationText();
 
     });

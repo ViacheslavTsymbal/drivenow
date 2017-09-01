@@ -9,8 +9,8 @@ const pt = new Lisabon();
 describe("Registration",function () {
     beforeEach(function () {
         console.log("---------------!!!PRODUCTION!!!PT non VV registration test--------------")
-        browser.get("https://www.drive-now.com");
-        browser.manage().addCookie("enabledFeatures","{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}")
+        //browser.get("https://www.drive-now.com");
+        //browser.manage().addCookie("enabledFeatures","{%22developmentTools%22:[%22local%22%2C%22alpha%22]%2C%22lisbon%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]%2C%22contentSync%22:[%22alpha%22]%2C%22bypassCachedContent%22:[%22alpha%22%2C%22beta%22]%2C%22packages%22:[%22local%22%2C%22alpha%22%2C%22beta%22]%2C%22newRegistrationPT%22:[%22local%22%2C%22alpha%22%2C%22beta%22%2C%22production%22]}")
     });
     it("Lisbon registration", function () {
         browser.get("https://www.drive-now.com/pt/lisbon/registration/1");

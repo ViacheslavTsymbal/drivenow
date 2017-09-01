@@ -234,7 +234,12 @@ export class regPage extends landingPage {
     public clickAddBusinessAddressCheckbox(){
         this.helper.click(this.businessAdressCheckbox)
     }
+    public createUniqueEmail(){
+        let mail = this.helper.addTimeStamp("meetjoeb11ack+") + "@gmail.com";
+        this.helper.saveEmail(mail)
+        return mail
 
+    }
 
 
 

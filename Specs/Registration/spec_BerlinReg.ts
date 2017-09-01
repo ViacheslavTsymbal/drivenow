@@ -11,6 +11,7 @@ const api = new Requests();
 
 describe("Registration",function () {
     beforeEach(function () {
+        console.log("--------------Berlin Registration with Visa---------------")
     browser.get("/de/berlin/registration/1");
 
 

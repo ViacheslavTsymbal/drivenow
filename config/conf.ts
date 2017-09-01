@@ -2,6 +2,7 @@ let Jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
 let failFast = require("protractor-fail-fast");
 let userDataFile = require('../Helpers/user.json');
 
+
 export const config = {
     directConnect: true,
     seleniumServerJar: require("selenium-standalone-jar").path,
@@ -47,9 +48,9 @@ export const config = {
         browser.ignoreSynchronization = true;
         browser.driver.manage().window().maximize();
         //browser.driver.manage().window().setSize(1920, 1080);
-        // browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
-        //     console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
-        // });
+         browser.get("https://drvnw:drivenow13@www.beta.drive-now.com/").then(function(){
+             console.log("Proxy login, basic authorizaiton:\nusername:drvnw\npassword:drivenow13");
+         });
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
             savePath: "./Reports/",
             takeScreenshotsOnlyOnFailures: true,
@@ -59,11 +60,10 @@ export const config = {
     specs: [
         //-----------------------------------------------------------//
         //"../Specs/Registration/spec_LisbonENreg.js",
-        //"../Specs/Registration/spec_LisbonPTreg.js",
-        //"../Specs/Registration/spec_LisbonPTreg.js",
+        "../Specs/Registration/spec_LisbonPTreg.js",
 
-        "../Specs/Registration/spec_LisbonProdPT.js",
-        "../Specs/Registration/spec_LisbonProdEN.js",
+        //"../Specs/Registration/spec_LisbonProdPT.js",
+       // "../Specs/Registration/spec_LisbonProdEN.js",
 
 
         //-----------------------------------------------------------//
@@ -74,7 +74,7 @@ export const config = {
 
         // "../Specs/Registration/spec_MilanReg.js",
         //"../Specs/spec_Redirects.js",
-        //"../Specs/spec_CustomerArea.js",
+        //"../Specs/spec_CustomerAreaFI.js",
         //"../Specs/password-reset.js",
 
 

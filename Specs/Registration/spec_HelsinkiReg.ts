@@ -7,9 +7,10 @@ const tenant = new errors();
 const fi = new Helsinki();
 
 describe("FI registration",function () {
-    beforeEach(function () {
+    beforeAll(function () {
         console.log("---------------FI registration test--------------")
         browser.get("/de/berlin/registration/1");
+        let email = reg.createUniqueEmail();
     });
 
 
@@ -72,7 +73,6 @@ describe("FI registration",function () {
         reg.clickNext();
 
         //Fourth Page
-        browser.pause();
         fi.addCreditCardIframe(4153013999701048, "1229", "048");
         reg.validatePromoCodeLogic("DEFAULT",tenant.fi.promoCodeMessage)
         reg.selectCheckBoxes();
